@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="two_columns">
+    <% if @space.photo? %>
+      <div class="card" style="background-image: url(<%= cl_image_path(@space.photo.path) %>); height: 500px; width: 500px; ">
+        </div>
+      <% else %>
+        <div class="card-header" style="background-image: url(); height: 200px;">
+        </div>
+      <% end %>
+      <div class="card-contents" style = "top:50px; width:50vw">
+        <h1><%= @space.name %></h1>
+        <p>Artist: <%= @space.category %></p>
+        <p>$<%= @space.capacity %></p>
+        <p><%= @space.description %></p>
+        <div style="font-size:30px; padding:15px;">
+          <%= link_to 'Edit', edit_space_path(@space) %>|
+          <%= link_to 'Back', spaces_path %>
+     </div>
+  </div>
+</div>
+</div>

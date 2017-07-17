@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
-  get 'new/create'
+  resources :spaces do
+    resources :events, only: [:new, :create]
+  end
 
-  get 'new/index'
+  resources :events, only: [:show, :index, :destroy]
 
-  get 'new/show'
 
-  get 'new/destroy'
-
-  get 'new/edit'
-
-  get 'new/update'
-
-  devise_for :users
-  root to: 'pages#home'
+  root to: 'spaces#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
