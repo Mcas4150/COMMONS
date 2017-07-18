@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new
     from = params[:event][:from]
     to = params[:event][:to]
-    @event.from = Date.strptime(from, "%m/%d/%Y")
+    @event.from = Date.strptime(to, "%m/%d/%Y")
     @event.to = Date.strptime(to, "%m/%d/%Y")
     @event.space = @space
     # @event.user = current_user
