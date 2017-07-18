@@ -11,6 +11,7 @@
         <h1><%= @space.name %></h1>
         <p><%= @space.category %></p>
         <p>cap:<%= @space.capacity %></p>
+        <p>noise:<%= @space.noise %></p>
         <p><%= @space.description %></p>
         <div style="font-size:30px; padding:15px;">
           <%= link_to 'Inquire', new_space_event_path(@space) %>|
@@ -21,7 +22,7 @@
 </div>
 </div>
 
-<div id="map" style="width: 80%; height: 400px; margin:auto;">
+<div id="map" class= "curvy" style="width: 80%; height: 400px; margin:auto;">
 
 
 <% content_for(:after_js) do %>
