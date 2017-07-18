@@ -13,6 +13,7 @@
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
+@import "bootstrap-datepicker";
 
 
 .btn-cool {
@@ -31,6 +32,11 @@
   background-color:#4C4C4C;
 }
 
+h1 {
+  text-border: 1px solid #8BB8A8;
+
+}
+
 .spaces-display {
   padding: 2em;
     display: flex;
@@ -38,6 +44,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
   .card {
+    border-radius: 4px;
     margin: 0px;
     padding: 0px;
     min-height: 300px;
@@ -65,10 +72,8 @@
 }
 
 
-.dropdown {
 
 
-}
 .dropdown li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;

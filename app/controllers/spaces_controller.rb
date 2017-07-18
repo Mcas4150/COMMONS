@@ -8,6 +8,11 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @spaces = Space.where(latitude: @space.latitude, longitude: @space.longitude)
+    @hash = Gmaps4rails.build_markers(@spaces) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
   end
 
   def new
@@ -19,7 +24,7 @@ class SpacesController < ApplicationController
     @space.user = current_user
     if @space.save
       redirect_to space_path(@space)
-   end
+    end
   end
 
   def edit
@@ -43,13 +48,10 @@ class SpacesController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:name, :description, :price, :category, :address, :capacity )
+    params.require(:space).permit(:name, :description, :price, :category, :address, :capacity, :images, :user_id)
   end
 
   def set_space
     @space = Space.find(params[:id])
   end
-
-
-
 end
