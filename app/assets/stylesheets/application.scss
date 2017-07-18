@@ -16,8 +16,8 @@
 
 
 .btn-cool {
-  color: #646464;
-  border: 1px solid #999999;
+  color: #8BB8A8;
+  border: 1px solid #4C4C4C;
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: lighter;
@@ -26,5 +26,38 @@
 .btn-cool:hover {
   opacity: 1;
   text-decoration: none;
-  color: #646464;
+  color: #8BB8A8;
 }
+
+.spaces-display {
+  padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  .card {
+    margin: 0px;
+    padding: 0px;
+    min-height: 300px;
+    min-width: 300px;
+    background-size: cover;
+  }
+  a, a p, a h2 {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  p {
+    font-weight: bold;
+    color: #646464;
+    font-size: 0.5em;
+    margin-bottom: 0em;
+  }
+  h2 {
+    font-style: italic;
+    color: #626262;
+    font-size: 0.5em;
+    margin: 0 0 0.5em 0;
+  }
+}
+

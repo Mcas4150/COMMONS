@@ -1,7 +1,7 @@
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #4C4C4C;
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -44,7 +44,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #8BB8A8;
   text-decoration: none;
 }
 
@@ -54,15 +54,15 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: #8BB8A8;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid #85C7F2;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #85C7F2;
+  border-color: #8BB8A8;
 }
 
 /* Navbar search form */
@@ -75,7 +75,7 @@
 }
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: #E6E6E6;
+  color: #8BB8A8;
   border: none;
   background: transparent;
   position: absolute;
@@ -90,13 +90,13 @@
   font-weight: lighter;
   color: #666666;
   border: 1px solid #E6E6E6;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
+  border: 1px solid #8BB8A8;
 }
 
 /* Navbar dropdown menu */
@@ -108,14 +108,14 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: #8BB8A8 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: #4C4C4C !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -124,7 +124,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: #8BB8A8;
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
