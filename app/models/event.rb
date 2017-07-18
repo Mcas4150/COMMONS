@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   # validates :admission, presence: true
   has_attachment :photo
   validates :photo, presence: true
-  validates :description, presence: true
+
   # validates :public, presence: true
 
 end
