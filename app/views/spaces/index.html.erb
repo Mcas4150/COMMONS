@@ -17,7 +17,13 @@
     <% @spaces.each do |space| %>
       <div>
          <%= link_to space_path(space) do %>
-
+          <% if space.images? %>
+              <div class="card" style="background-image: url(<%= cl_image_path(space.images.path) %>);">
+              </div>
+               <% else %>
+            <div class="card-header" style="background-image: url(); height: 200px;">
+            </div>
+            <% end %>
           <div class="card-body" style="font-size:30px;">
             <h2><%= space.name %></h2>
             <p><%= space.price %></p>

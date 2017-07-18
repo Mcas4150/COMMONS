@@ -1,6 +1,12 @@
 <div class="container">
   <div class="two_columns">
-
+        <% if @space.images? %>
+          <div class="card" style="background-image: url(<%= cl_image_path(@space.images.path) %>); width: 200px; height: 300px, crop: :fill ; ">
+          </div>
+           <% else %>
+        <div class="card-header" style="background-image: url(); height: 200px;">
+        </div>
+        <% end %>
       <div class="card-contents" style = "top:50px; width:50vw">
         <h1><%= @space.name %></h1>
         <p>Artist: <%= @space.category %></p>
