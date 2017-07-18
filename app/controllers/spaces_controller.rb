@@ -1,5 +1,5 @@
-class SpaceController < ApplicationController
-  before_action :set_space, only [:show, :edit, :update]
+class SpacesController < ApplicationController
+  before_action :set_space, only: [:show, :edit, :update]
 
 
   def index
@@ -19,6 +19,7 @@ class SpaceController < ApplicationController
     @space.user = current_user
     if @space.save
       redirect_to space_path(@space)
+   end
   end
 
   def edit
@@ -30,6 +31,7 @@ class SpaceController < ApplicationController
       redirect_to space_path(@space)
     else
       render :edit
+    end
   end
 
   def destroy
@@ -41,7 +43,7 @@ class SpaceController < ApplicationController
   private
 
   def space_params
-    params.require(:space).permit(:name, :description, :price, :category, :address, :images, :capacity )
+    params.require(:space).permit(:name, :description, :price, :category, :address, :capacity )
   end
 
   def set_space
