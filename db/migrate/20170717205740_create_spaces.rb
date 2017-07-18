@@ -10,9 +10,6 @@ class CreateSpaces < ActiveRecord::Migration[5.0]
       t.integer :capacity
       t.string :images
       t.references :user, foreign_key: true
-      t.references :event, foreign_key: true
-      t.references :reviewspace, foreign_key: true
-      t.references :messages, foreign_key: true
 
       t.timestamps
     end

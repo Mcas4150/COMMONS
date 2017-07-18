@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@space) do |f| %>
+
+    <%= f.input_field :name, placeholder: "title" %>
+    <br/>
+    <%= f.input_field :category, placeholder: "category"%>
+    <br/>
+    <%= f.input_field :price, placeholder: "price"%>
+    <br/>
+    <%= f.input_field :description, placeholder: "description" %>
+    <br/>
+    <%= f.input_field :capacity, placeholder: "capacity" %>
+    <br/>
+    <br/>
+    <%= f.button :submit, class: "btn btn-cool"  %>
+<% end %>
+s
