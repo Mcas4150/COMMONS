@@ -4,6 +4,7 @@
   <%= cl_image_tag @space.images.path, height: 150, width: 150, crop: :fill %>
   <h2><%= @space.name %></h2>
   <p><%= @space.category %></p>
+  <p><%= @space.description %></p>
   <p>$<%= @space.price %></p>
   <%= f.text_field :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
   <br/>

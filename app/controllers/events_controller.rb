@@ -20,13 +20,13 @@ class EventsController < ApplicationController
     to = params[:event][:to]
     @event.from = Date.strptime(from, "%m/%d/%Y")
     @event.to = Date.strptime(to, "%m/%d/%Y")
-    @event.record = @record
-    @event.user = current_user
+    @event.space = @space
+    # @event.user = current_user
 
     if @event.save
       redirect_to events_path
     else
-      render "records/show"
+      render "spaces/show"
     end
   end
 
