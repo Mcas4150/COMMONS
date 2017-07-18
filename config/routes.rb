@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+ mount Attachinary::Engine => "/attachinary"
 
   resources :spaces do
     resources :events, only: [:new, :create]
   end
-  mount Attachinary::Engine => "/attachinary"
+
 
   resources :events, only: [:show, :index, :destroy]
 
