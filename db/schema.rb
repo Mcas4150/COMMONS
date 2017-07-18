@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20170718163100) do
     t.date     "from"
     t.date     "to"
     t.index ["space_id"], name: "index_events_on_space_id", using: :btree
-    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
   create_table "flats", force: :cascade do |t|
