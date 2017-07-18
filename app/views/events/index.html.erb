@@ -1,2 +1,23 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+            <div class="card-header" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= cl_image_path(event.space.images.path) %>); height: 300px; width : 300px; padding: 10px;">
+            </div>
+          <div class="card-body poopy">
+            <h1><%= event.space.name %></h1>
+            <p>Category: <%= event.space.category %></p>
+            <p>Cap: $<%= event.space.capacity %></p>
+            <p>Ordered for: <%= event.from.to_s %></p>
+            <p>Return on: <%= event.to.to_s %></p>
+            <%= link_to 'Delete', event_path(event), method: :delete  %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Back to Spaces', spaces_path %>
+</div>
+
+
