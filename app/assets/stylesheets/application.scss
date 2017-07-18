@@ -13,6 +13,7 @@
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
+@import "bootstrap-datepicker";
 
 
 .btn-cool {
@@ -64,5 +65,17 @@ h1 {
     font-size: 0.5em;
     margin: 0 0 0.5em 0;
   }
+}
+
+
+a {
+  color: #8BB8A8;
+  &:hover {
+
+
+      color: #8BB8A8;
+
+    }
+
 }
 

@@ -1,2 +1,16 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<div class="form-wrapper">
+<%= simple_form_for [@space, @event] do |f| %>
+  <%# f.hidden_field :record_id, value: @record.id %>
+  <%= cl_image_tag @space.images.path, height: 150, width: 150, crop: :fill %>
+  <h2><%= @space.name %></h2>
+  <p><%= @space.category %></p>
+  <p>$<%= @space.price %></p>
+  <%= f.text_field :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
+  <br/>
+  <%= f.text_field :to, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Return date' %>
+  <br/>
+  <br/>
+  <%= f.submit "Confirm Event", class: "btn btn-cool" %>
+  <%= link_to 'Back', spaces_path %>
+<% end %>
+</div>
