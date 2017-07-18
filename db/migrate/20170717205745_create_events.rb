@@ -6,7 +6,6 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.boolean :public
       t.integer :admission
       t.references :space, foreign_key: true
-      t.references :reviewevent, foreign_key: true
 
       t.timestamps
     end
