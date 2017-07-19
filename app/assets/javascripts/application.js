@@ -11,6 +11,11 @@
 //= require_tree .
 
 
+//= require ./cable
+//= require ./google_maps_autocomplete
+
+
+
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.datepicker').datepicker();
