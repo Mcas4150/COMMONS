@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <div class="two_columns">
         <% if @space.images? %>
@@ -8,10 +10,16 @@
         </div>
         <% end %>
       <div class="card-contents" style = "top:50px; width:50vw">
-        <h1><%= @space.name %></h1>
+
+        <div class="title2">
+        <%= @space.name %>
+        </div>
+      <div class="icon-box">
+        <div class="icon-row-divider">
         <p><%= @space.category %></p>
         <p>cap:<%= @space.capacity %></p>
         <p>noise:<%= @space.noise %></p>
+        </div>
         <p><%= @space.description %></p>
         <div style="font-size:30px; padding:15px;">
           <%= link_to 'Inquire', new_space_event_path(@space) %>|
@@ -19,6 +27,7 @@
           <%= link_to 'Back', spaces_path %>
      </div>
   </div>
+</div>
 </div>
 </div>
 

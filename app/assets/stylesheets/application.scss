@@ -16,6 +16,30 @@
 @import "bootstrap-datepicker";
 
 
+
+
+.title2 {
+      font-size: 36px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.6px !important;
+    line-height: 44px !important;
+    padding-bottom: 6px !important;
+    padding-top: 6px !important;
+    word-wrap: break-word !important
+}
+
+
+
+.icon-box {
+
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+
+
+
 .curvy {
   border-radius: 5px;
 
