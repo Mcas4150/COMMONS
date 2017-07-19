@@ -8,14 +8,17 @@
 //= require underscore
 //= require gmaps/google
 //= require slick
+//= require ./cable
+//= require ./google_maps_autocomplete
 //= require_tree .
 
+
+$('.slider').slick();
 
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.datepicker').datepicker();
 });
-
 
 [
     {
