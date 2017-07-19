@@ -12,7 +12,6 @@
 //= require ./google_maps_autocomplete
 //= require_tree .
 
-
 $('.slider').slick();
 
 $(document).ready(function() {

@@ -47,12 +47,11 @@ private
     @space = Space.find(params[:space_id])
   end
 
+  def set_user
+    @user = User.find(params[:user_id])
+  end
+
   def event_params
     params.require(:event).permit(:to, :from)
   end
-
-
-
-
-
 end
