@@ -7,7 +7,9 @@
 //= require bootstrap-datepicker
 //= require underscore
 //= require gmaps/google
-//= require_tree .
+
+//= require ./cable
+//= require ./google_maps_autocomplete
 
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
