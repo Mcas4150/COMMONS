@@ -73,10 +73,6 @@
 }
 
 
-.two_columns{
-  display:flex;
-  justify-content: space-between;
-}
 
 .form-wrapper{
   padding: 100px 0 0 100px;
@@ -85,17 +81,8 @@
   width: 200px;
 }
 
-.slider-container {
-  position: relative;
-    height: 20px;
+.half-width{
+  width: 50%;
 }
-.slider {
-  display: none;
-  margin: 10px 24px;
-  overflow: hidden;
-
-}
-
-
 
 

@@ -1,13 +1,15 @@
 <div class="container">
   <div class="two_columns">
-        <% if @space.images? %>
 
-          <div class="card" style="background-image: url(<%= cl_image_path(@space.images.last.path) %>); width: 200px; height: 300px, crop: :fill ; ">
-          </div>
-           <% else %>
-        <div class="card-header" style="background-image: url(); height: 200px;">
-        </div>
-        <% end %>
+            <div class="half-width">
+              <div class="slider">
+                <% @space.images.each do |image| %>
+                  <div><%= cl_image_tag(image.path, {size: '500x125', crop: :fit}) %></div>
+                <% end %>
+              </div>
+              </div>
+
+
       <div class="card-contents" style = "top:50px; width:50vw">
           <h1><%= @space.name %></h1>
           <p><%= @space.category %></p>
@@ -20,17 +22,6 @@
           <%= link_to 'Back', spaces_path %>
         </div>
       </div>
-  </div>
-</div>
-
-<div class="slider-container">
-  <div class="slider">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
   </div>
 </div>
 
