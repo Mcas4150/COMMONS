@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'slick_rails'
 
 group :development, :test do
   gem 'better_errors'
@@ -41,5 +42,6 @@ gem "gmaps4rails"
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+
 
 

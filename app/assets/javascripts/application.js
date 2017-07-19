@@ -7,13 +7,14 @@
 //= require bootstrap-datepicker
 //= require underscore
 //= require gmaps/google
+//= require slick
 //= require_tree .
+
 
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.datepicker').datepicker();
 });
-
 
 
 [

@@ -19,13 +19,12 @@
   </div>
 
 
-
   <div class="spaces-display">
     <% @spaces.each do |space| %>
       <div>
          <%= link_to space_path(space) do %>
           <% if space.images? %>
-              <div class="card" style="background-image: url(<%= cl_image_path(space.images.path) %>);">
+              <div class="card" style="background-image: url(<%= cl_image_path(space.images.last.path) %>);">
               </div>
                <% else %>
             <div class="card-header" style="background-image: url(); height: 200px;">
@@ -39,6 +38,9 @@
       </div>
       <% end %>
   </div>
+
+
+
 
 
 
