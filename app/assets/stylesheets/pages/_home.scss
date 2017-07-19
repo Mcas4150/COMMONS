@@ -71,6 +71,8 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+
 .two_columns{
   display:flex;
   justify-content: space-between;
@@ -82,3 +84,18 @@
 .branding img {
   width: 200px;
 }
+
+.slider-container {
+  position: relative;
+    height: 20px;
+}
+.slider {
+  display: none;
+  margin: 10px 24px;
+  overflow: hidden;
+
+}
+
+
+
+
