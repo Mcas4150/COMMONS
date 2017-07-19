@@ -4,9 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :events
   has_many :spaces
   has_many :reviewspaces
   has_many :reviewevents
+
+
+  def name
+    "#{id} - #{email }"
+  end
 
 
   def self.find_for_facebook_oauth(auth)
