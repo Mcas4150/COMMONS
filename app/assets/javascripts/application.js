@@ -17,6 +17,8 @@ $(document).ready(function() {
   $('.datepicker').datepicker();
 });
 
+$('.slider').slick();
+
 
 
 [
