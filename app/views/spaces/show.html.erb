@@ -10,25 +10,25 @@
   <div class="left-pack">
     <div class="title2"> <%= @space.name %> $<%= @space.price %> </div>
       <p><%= @space.address%></p>
-      <p><%= @space.category %></p>
+      <p>Category: <%= @space.category %></p>
     <div class="icons-text">
       <div class="icon">
-        <i class="fa fa-users" aria-hidden="true"></i>
+        <i class="fa fa-users fa-3x center-block" aria-hidden="true"></i>
         <h3><%= @space.capacity %>people</h3>
       </div>
       <div class="icon">
-        <i class="fa fa-volume-up" aria-hidden="true"></i>
+        <i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
         <h3><%= @space.noise %></h3>
       </div>
     </div>
-      <div class="content">
-        <p><%= @space.description %></p>
-      </div>
-      <div class="function" ">
-        <%= link_to 'Inquire', new_space_event_path(@space) %>|
-        <%= link_to 'Edit', edit_space_path(@space) %>|
-        <%= link_to 'Back', spaces_path %>
-      </div>
+    <div class="description">
+      <p><%= @space.description %></p>
+    </div>
+    <div class="function">
+      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary" %>
+      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary" %>
+      <%= link_to 'Back', spaces_path, class:"btn btn-primary" %>
+    </div>
   </div>
   <div class="right-pack">
   </div>

@@ -27,14 +27,30 @@ margin: 0 auto;
 
 .icon{
   float: left;
+  width:200px;
 }
-.content{
 
+.icon i{
+  display:block;
+  margin-left: 70px;
+  margin-right: auto;
+}
+
+.icon h3{
+  text-align: center;
+}
+
+
+.description{
+  float:left;
+  width:100%;
 }
 
 .function{
   font-size:30px;
   padding:15px;
+  width:100%;
+  float:left;
 }
 
 #map{
