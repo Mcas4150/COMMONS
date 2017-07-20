@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
 
 
-  resources :events, only: [:show, :index, :destroy]
+  resources :events, only: [:show, :index, :destroy] do
+    resources :reviewevents, only: :create
+  end
 
 
   devise_for :users
