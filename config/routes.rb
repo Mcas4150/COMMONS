@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :spaces do
     resources :events, only: [:new, :create]
+
+
+
   end
 
 

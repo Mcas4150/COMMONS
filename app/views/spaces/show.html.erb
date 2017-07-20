@@ -22,9 +22,9 @@
         <p><%= @space.category %></p>
         <p>cap:<%= @space.capacity %></p>
         <p>noise:<%= @space.noise %></p>
+          <p>noise: <%= @space.noise %></p>
         </div>
         <p><%= @space.description %></p>
-      <%= pluralize @space.reviewspaces.size, "review" %>
         <div style="font-size:30px; padding:15px;">
           <%= link_to 'Inquire', new_space_event_path(@space) %>|
           <%= link_to 'Edit', edit_space_path(@space) %>|

@@ -1,14 +1,19 @@
 class RevieweventsController < ApplicationController
-end
 
   def create
     @event = Event.find(params[:event_id])
     @reviewevent = Reviewevent.new(reviewevent_params)
     @reviewevent.event = @event
     if @reviewevent.save
-      redirect_to event_path(@event)
+      respond_to do |format|
+        format.html { redirect_to event_path(@event)}
+        format.js
+      end
     else
-      render 'events/show'
+      respond_to do |format|
+        format.html {render 'events/show'}
+        format.js
+      end
     end
   end
 
