@@ -1,14 +1,16 @@
 <div class="form-wrapper">
 <%= simple_form_for [@space, @event] do |f| %>
   <%# f.hidden_field :record_id, value: @record.id %>
-  <%= cl_image_tag @space.images.path, height: 150, width: 150, crop: :fill %>
+
+
   <h2><%= @space.name %></h2>
-  <p><%= @space.category %></p>
-  <p><%= @space.description %></p>
-  <p>$<%= @space.price %></p>
+
+  <p>Created by:<%=current_user.name %></p>
+  <p><%= f.input_field :pitch, placeholder: "pitch your idea for this space" %></p>
   <%= f.text_field :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
   <br/>
   <%= f.text_field :to, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Return date' %>
+  <p>$<%= @space.price %></p>
   <br/>
   <br/>
   <%= f.submit "Confirm Event", class: "btn btn-cool" %>

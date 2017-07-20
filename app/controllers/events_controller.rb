@@ -53,6 +53,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from)
+    params.require(:event).permit(:to, :from, :space)
   end
 end

@@ -1,7 +1,8 @@
 class Space < ApplicationRecord
   belongs_to :user
   has_many :events
-  has_many :reviewspace
+  has_many :reviewspaces
+  has_many :reviewevents
   has_attachments :images, maximum: 4
   validates :name, presence: true
   validates :name, uniqueness: true

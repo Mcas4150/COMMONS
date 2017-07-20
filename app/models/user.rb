@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
 
   def name
-    "#{id} - #{email }"
+    "#{email }"
   end
 
 
