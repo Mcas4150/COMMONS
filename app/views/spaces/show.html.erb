@@ -1,13 +1,12 @@
 <div class="slider">
   <% @space.images.each do |image| %>
      <div>
-      <%= cl_image_tag(image.path, {size: '600x300', crop: :fit}) %>
+      <%= cl_image_tag(image.path, {:width => 1500, :height => 550, crop: :fill}) %>
      </div>
   <% end %>
 </div>
 
 <div class="container">
-
   <div class="left-pack">
     <div class="title2"> <%= @space.name %></div>
       <p><%= @space.address%></p>
