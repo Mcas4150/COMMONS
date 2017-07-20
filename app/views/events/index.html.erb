@@ -11,7 +11,7 @@
             <p>Cap: $<%= event.space.capacity %></p>
             <p>Ordered for: <%= event.from.to_s %></p>
             <p>Return on: <%= event.to.to_s %></p>
-             <%= link_to "show", event_path(event) %>
+             <%= link_to "show", space_event_path(event.space, event) %>
             <%= link_to 'Delete', event_path(event), method: :delete  %>
           </div>
         </div>
