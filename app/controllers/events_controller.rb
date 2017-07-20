@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_space, only: [:new, :show, :create]
+  before_action :set_event, only: [:show]
 
   def new
     @event = Event.new
@@ -24,6 +25,7 @@ class EventsController < ApplicationController
     # @event.user = current_user
 
     if @event.save
+      EventMailer.confirmation(@event).deliver_now
       redirect_to events_path
     else
       render "spaces/show"
@@ -47,11 +49,15 @@ private
     @space = Space.find(params[:space_id])
   end
 
+   def set_event
+    @event = Event.find(params[:id])
+  end
+
   def set_user
     @user = User.find(params[:user_id])
   end
 
   def event_params
-    params.require(:event).permit(:to, :from)
+    params.require(:event).permit(:to, :from, :space)
   end
 end

@@ -129,6 +129,7 @@ a {
   padding: 10px 20px;
 }
 
+
 .btn-primary {
     color: #fff;
     background-color: $blue;
@@ -137,4 +138,8 @@ a {
 .slick-slide.slick-current {
     display: flex;
     align-items: center;
+
+.btn-info:hover {
+  background-color: #4C4C4C;
+  border-color: #4C4C4C;
 }
