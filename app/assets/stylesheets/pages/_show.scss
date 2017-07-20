@@ -1,0 +1,44 @@
+.slider{
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.slick-slide{
+margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-pack{
+  width:45%;
+  float:left;
+}
+.right-pack{
+  width:45%;
+  float:right;
+}
+.icons-text{
+  width:100%;
+}
+
+.icon{
+  float: left;
+}
+.content{
+
+}
+
+.function{
+  font-size:30px;
+  padding:15px;
+}
+
+#map{
+  width: 80%;
+  height: 400px;
+  margin:0 auto;
+}

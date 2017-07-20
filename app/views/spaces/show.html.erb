@@ -1,39 +1,40 @@
-
+<div class="slider">
+  <% @space.images.each do |image| %>
+     <div>
+     <%= cl_image_tag(image.path, {size: '300x300', crop: :fit}) %>
+     </div>
+  <% end %>
+</div>
 
 <div class="container">
-  <div class="two_columns">
-        <div class="half-width">
-          <div class="slider">
-            <% @space.images.each do |image| %>
-               <div><%= cl_image_tag(image.path, {size: '500x125', crop: :fit}) %></div>
-                 <% end %>
-               </div>
-               </div>
-
-      <div class="card-contents" style = "top:50px; width:50vw">
-
-        <div class="title2">
-        <%= @space.name %>
-        </div>
-      <div class="icon-box">
-        <div class="icon-row-divider">
-        <p>Created by:<%=@space.user %></p>
-        <p><%= @space.category %></p>
-        <p>cap:<%= @space.capacity %></p>
-        <p>noise:<%= @space.noise %></p>
-        </div>
+  <div class="left-pack">
+    <div class="title2"> <%= @space.name %> $<%= @space.price %> </div>
+      <p><%= @space.address%></p>
+      <p><%= @space.category %></p>
+    <div class="icons-text">
+      <div class="icon">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <h3><%= @space.capacity %>people</h3>
+      </div>
+      <div class="icon">
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
+        <h3><%= @space.noise %></h3>
+      </div>
+    </div>
+      <div class="content">
         <p><%= @space.description %></p>
-        <div style="font-size:30px; padding:15px;">
-          <%= link_to 'Inquire', new_space_event_path(@space) %>|
-          <%= link_to 'Edit', edit_space_path(@space) %>|
-          <%= link_to 'Back', spaces_path %>
-     </div>
+      </div>
+      <div class="function" ">
+        <%= link_to 'Inquire', new_space_event_path(@space) %>|
+        <%= link_to 'Edit', edit_space_path(@space) %>|
+        <%= link_to 'Back', spaces_path %>
+      </div>
+  </div>
+  <div class="right-pack">
   </div>
 </div>
-</div>
-</div>
 
-<div id="map" class= "curvy" style="width: 80%; height: 400px; margin:auto;">
+<div id="map" class= "curvy">
 
 
 <% content_for(:after_js) do %>

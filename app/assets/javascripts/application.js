@@ -17,7 +17,11 @@ $(document).ready(function() {
   $('.datepicker').datepicker();
 });
 
-$('.slider').slick();
+$('.slider').slick({
+  arrows: true,
+  centerMode: true,
+  centerPadding:'100px',
+});
 
 
 
