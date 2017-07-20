@@ -129,3 +129,12 @@ a {
   padding: 10px 20px;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: $blue;
+    border-color: $blue;
+}
+.slick-slide.slick-current {
+    display: flex;
+    align-items: center;
+}
