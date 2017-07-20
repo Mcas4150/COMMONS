@@ -1,7 +1,7 @@
 <div class="form-wrapper">
 <%= simple_form_for [@space, @event] do |f| %>
   <%# f.hidden_field :record_id, value: @record.id %>
-  <%= cl_image_tag @space.images.path, height: 150, width: 150, crop: :fill %>
+
   <h2><%= @space.name %></h2>
   <p><%= @space.category %></p>
   <p><%= @space.description %></p>
