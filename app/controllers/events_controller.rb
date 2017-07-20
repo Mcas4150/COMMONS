@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_space, only: [:new, :show, :create]
+  before_action :set_event, only: [:show]
 
   def new
     @event = Event.new
@@ -45,6 +46,10 @@ class EventsController < ApplicationController
 private
   def set_space
     @space = Space.find(params[:space_id])
+  end
+
+   def set_event
+    @event = Event.find(params[:id])
   end
 
   def set_user

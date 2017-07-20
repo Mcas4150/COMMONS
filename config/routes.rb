@@ -7,16 +7,16 @@ Rails.application.routes.draw do
 
 
   resources :spaces do
-    resources :events, only: [:new, :create]
-
-
-
+    resources :events, only: [:new, :create, :show]
   end
 
+resources :events, only: [:index, :destroy] do
+  resources :reviewevents, only: :create
+end
 
-  resources :events, only: [:show, :index, :destroy] do
-    resources :reviewevents, only: :create
-  end
+
+
+
 
 
 
