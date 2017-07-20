@@ -1,7 +1,7 @@
 <div class="slider">
   <% @space.images.each do |image| %>
      <div>
-     <%= cl_image_tag(image.path, {size: '300x300', crop: :fit}) %>
+      <%= cl_image_tag(image.path, {size: '600x300', crop: :fit}) %>
      </div>
   <% end %>
 </div>
@@ -9,10 +9,14 @@
 <div class="container">
 
   <div class="left-pack">
-    <div class="title2"> <%= @space.name %> $<%= @space.price %> </div>
+    <div class="title2"> <%= @space.name %></div>
       <p><%= @space.address%></p>
       <p>Category: <%= @space.category %></p>
     <div class="icons-text">
+      <div class="icon">
+        <i class="fa fa-usd fa-3x center-block" aria-hidden="true"></i>
+        <h3><%= @space.price %></h3>
+      </div>
       <div class="icon">
         <i class="fa fa-users fa-3x center-block" aria-hidden="true"></i>
         <h3><%= @space.capacity %>people</h3>
@@ -26,12 +30,15 @@
       <p><%= @space.description %></p>
     </div>
     <div class="function">
-      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary" %>
-      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary" %>
-      <%= link_to 'Back', spaces_path, class:"btn btn-primary" %>
+      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg" %>
+      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg" %>
+      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg" %>
     </div>
   </div>
-  <div class="right-pack">
+  <div class="right-pack curvy">
+    <div class="title_window">Past events</div>
+
+
   </div>
 </div>
 

@@ -1,5 +1,5 @@
 .slider{
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -7,19 +7,20 @@
 
 }
 .slick-slide{
-margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .left-pack{
-  width:45%;
+  width:65%;
   float:left;
 }
 .right-pack{
-  width:45%;
+  width:30%;
   float:right;
+  background-color: $blue;
+  margin-top: 40px;
 }
 .icons-text{
   width:100%;
@@ -28,12 +29,16 @@ margin: 0 auto;
 .icon{
   float: left;
   width:200px;
+  color: $green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.icon i{
+*:before{
   display:block;
-  margin-left: 70px;
-  margin-right: auto;
+  margin:0 auto;
 }
 
 .icon h3{
@@ -52,6 +57,15 @@ margin: 0 auto;
   width:100%;
   float:left;
 }
+
+.title_window{
+  text-align:center;
+  height:650px;
+  font-size:20px;
+  margin-top:5px;
+}
+
+
 
 #map{
   width: 80%;
