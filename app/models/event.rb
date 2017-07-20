@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+
   belongs_to :space
   belongs_to :user
   has_many :reviewevents
@@ -7,5 +8,7 @@ class Event < ApplicationRecord
 
 
   # validates :public, presence: true
+
+
 
 end

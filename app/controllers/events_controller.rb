@@ -25,6 +25,7 @@ class EventsController < ApplicationController
     # @event.user = current_user
 
     if @event.save
+      EventMailer.confirmation(@event).deliver_now
       redirect_to events_path
     else
       render "spaces/show"
