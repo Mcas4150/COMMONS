@@ -1,2 +1,17 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+
+ <h2>
+ <%= pluralize @event.reviewevents.size, "review" %>
+ </h2>
+
+<div id="reviews">
+  <% if @event.reviewevents.blank? %>
+    Be the first to leave a review for <%= @event.name %>
+  <% else %>
+    <% @event.reviewevents.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
+
+
+<%= render 'reviewevents/form', event: @event, reviewevent: @reviewevent %>

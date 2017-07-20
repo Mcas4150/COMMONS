@@ -1,0 +1,13 @@
+<% if @reviewevent.errors.any? %>
+  // Render new review form with errors
+  $('#new_reviewevent').html("<%= j render 'reviewevents/form', event: @event, reviewevent: @reviewevent %>");
+<% else %>
+  // Create a paragraph for the new review. But hide it.
+  var new_reviewevent = $("<%= j render 'reviewevents/show', reviewevent: @reviewevent %>").hide();
+  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
+  $('#reviewevents').append(new_reviewevent);
+  // Show the new review with an animation!
+  new_reviewevent.slideDown();
+  // Reset the form
+  $('#new_reviewevent').html("<%= j render 'reviewevents/form', event: @event, reviewevent: Reviewevent.new %>");
+<% end %>

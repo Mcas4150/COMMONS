@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20170719175202) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170719175202) do
     t.date     "from"
     t.date     "to"
     t.integer  "user_id"
+    t.string   "pitch"
     t.index ["space_id"], name: "index_events_on_space_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
