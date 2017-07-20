@@ -22,6 +22,7 @@ gem 'uglifier'
 gem 'slick_rails'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'slick_rails'
 
 
 group :development, :test do
