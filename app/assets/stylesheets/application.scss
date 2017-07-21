@@ -54,8 +54,8 @@
 }
 
 body {
-
-  background-color: #ECEDEA;
+  background-image: none !important;
+  background-color: lighten($brand-color, 30%);
 }
 
 .btn-cool {
