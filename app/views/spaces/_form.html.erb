@@ -1,14 +1,22 @@
 
 <%= simple_form_for(@space) do |f| %>
 
-    <%= f.input :name %>
-    <%= f.input :address, placeholder: "" %>
-    <%= f.input :category %>
-    <%= f.input :noise %>
-    <%= f.input :capacity %>
-    <%= f.input :description %>
-    <%= f.input :price %>
+    <%= f.input_field :name, placeholder: "title" %>
+    <br/>
+      <%= f.input_field :category, placeholder: "category"%>
+    <br/>
+       <%= f.input_field :noise, placeholder: "noise" %>
+    <br/>
+       <%= f.input_field :capacity, placeholder: "capacity" %>
+    <br/>
+    <%= f.input_field :description, placeholder: "description" %>
+    <br/>
+    <%= f.input_field :address, placeholder: "address"%>
+    <br/>
+    <%= f.input_field :price, placeholder: "price"%>
+    <br/>
     <%= f.input :images, as: :attachinary %>
-    <%= f.button :submit, class: "main-btn"  %>
+    <br/>
+    <%= f.button :submit, class: "btn btn-cool"  %>
 
 <% end %>
