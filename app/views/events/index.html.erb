@@ -2,21 +2,28 @@
   <div class="row">
     <% @events.each do |event| %>
       <div class="col-xs-12 col-sm-4">
-             <div class="card text-center">
-            <div class="card-header" style=" height: 300px; width : 300px; padding: 10px;">
+        <div>
+          <%= link_to space_event_path(event.space, event) do %>
+          <% if event.images? %>
+            <!--  <div class="card text-center"> -->
+              <div class="card" style="background-image: url(<%= cl_image_path(event.images) %>); height: 300px; width : 300px; padding: 10px;" >
+             </div>
+             <% else %>
+            <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;">
             </div>
+            <% end %>
           <div class="card-body poopy">
-            <h1><%= event.space.name %></h1>
+            <h1><%= event.name %></h1>
+            <p>Location: <%= event.space.name %></p>
             <p>Category: <%= event.space.category %></p>
-            <p>Cap: $<%= event.space.capacity %></p>
-            <p>Ordered for: <%= event.from.to_s %></p>
-            <p>Return on: <%= event.to.to_s %></p>
-             <%= link_to "show", space_event_path(event.space, event) %>
-            <%= link_to 'Delete', event_path(event), method: :delete  %>
+            <p>Start: <%= event.from.to_s %></p>
+            <p>End: <%= event.to.to_s %></p>
           </div>
+        <!-- </div> -->
+          <% end %>
         </div>
-      </div>
-    <% end %>
+        </div>
+       <% end %>
   </div>
   <%= link_to 'Back to Spaces', spaces_path %>
 </div>

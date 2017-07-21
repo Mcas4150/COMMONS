@@ -1,4 +1,8 @@
 
+ <h1><%= @event.name %></h1>
+
+
+
  <h2>
  <%= pluralize @event.reviewevents.size, "review" %>
  </h2>
@@ -15,3 +19,9 @@
 
 
 <%= render 'reviewevents/form', event: @event, reviewevent: Reviewevent.new%>
+
+
+
+        <%= link_to 'Edit', edit_event_path(@event), class:"btn btn-primary btn-lg"%>
+
+ <%= link_to 'Back', events_path, class:"btn btn-primary btn-lg" %>
