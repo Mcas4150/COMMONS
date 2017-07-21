@@ -40,12 +40,12 @@
 
 .icon{
   float: left;
-  width:200px;
-  color: $green;
+  width:100px;
+  color: $brand-color;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 *:before{

@@ -6,9 +6,9 @@
   <% end %>
 </div>
 
-<div class="container">
-  <div class="left-pack">
-    <div class="title2"> <%= @space.name %></div>
+<div class="container flex-container">
+    <div class="card card-large">
+    <h2> <%= @space.name %></h2>
       <p><%= @space.address%></p>
       <p>Category: <%= @space.category %></p>
     <div class="icons-text">
@@ -29,19 +29,14 @@
       <p><%= @space.description %></p>
     </div>
     <div class="function">
-      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg" %>
-      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg" %>
-      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg" %>
+      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg main-btn main-btn-small" %>
     </div>
-  </div>
-  <div class="right-pack curvy">
-    <div class="title_window">Past events</div>
-
-
-  </div>
+    </div>
 </div>
+    <div id="map" class= "curvy"></div>d
 
-<div id="map" class= "curvy">
 
 
 <% content_for(:after_js) do %>
