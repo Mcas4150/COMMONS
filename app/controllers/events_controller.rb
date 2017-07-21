@@ -16,16 +16,15 @@ class EventsController < ApplicationController
 
 
   def create
-    @event = Event.new
+    @event = Event.new(event_params)
     from = params[:event][:from]
     to = params[:event][:to]
     @event.from = Date.strptime(to, "%m/%d/%Y")
     @event.to = Date.strptime(to, "%m/%d/%Y")
     @event.space = @space
     # @event.user = current_user
-
     if @event.save
-      EventMailer.confirmation(@event).deliver_now
+     EventMailer.confirmation(@event).deliver_now
       redirect_to events_path
     else
       render "spaces/show"
@@ -58,6 +57,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from, :space)
+    params.require(:event).permit(:to, :from, :space, :name, images: [])
   end
 end

@@ -8,10 +8,10 @@
     Be the first to leave a review for <%= @event.name %>
   <% else %>
     <% @event.reviewevents.each do |review| %>
-      <%= render 'reviews/show', review: review %>
+      <%= render 'reviewevents/show', reviewevent: review %>
     <% end %>
   <% end %>
 </div>
 
 
-<%= render 'e-reviews/form', event: @event, reviewevent: Reviewevent.new%>
+<%= render 'reviewevents/form', event: @event, reviewevent: Reviewevent.new%>

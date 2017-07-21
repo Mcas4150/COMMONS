@@ -77,12 +77,16 @@
 
 .title_window{
   text-align:center;
-  height:650px;
-  font-size:20px;
-  margin-top:5px;
+  font-color:$brand-color;
+  font-size:25px;
+  margin-top:10px;
 }
 
+.card{
+  text-align:center;
+  padding-bottom: 20px;
 
+}
 
 #map{
   width: 80%;
