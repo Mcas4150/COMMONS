@@ -81,50 +81,6 @@ h1 {
   justify-content: space-between;
 }
 
-.card {
-  border-radius: 4px;
-  margin: 0px;
-  padding: 5px;
-  height: 375px;
-  width: 325px;
-  background-size: cover;
-  border: 3px solid $black;
-  background-color: white;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .card-image {
-    width: 300px;
-    height:275px;
-    background-size: cover;
-  }
-  a {
-    color: $brand-color;
-    &:hover {
-      color: darken($brand-color, 10%);
-      text-decoration: none;
-    }
-  }
-}
-p {
-  font-family:$base-font;
-  font-weight: bold;
-  color: $black;
-  font-size: 0.5em;
-  margin-bottom: 0em;
-  position: relative;
-  top: 290px;
-  margin-left: 20px;
-}
-h2 {
-  font-family:$base-font;
-  color: $black;
-  font-size: 0.5em;
-  margin: 0 0 0.5em 0;
-  margin-left:20px;
-  position: relative;
-  top: 290px;
-
-}
 
 .dropdown li > a {
   transition: color 0.3s ease;
