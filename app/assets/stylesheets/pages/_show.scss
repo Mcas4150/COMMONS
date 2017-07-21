@@ -36,6 +36,10 @@
 }
 .icons-text{
   width:100%;
+  justify-content: space-around;
+  display:flex;
+  margin-bottom: 10px;
+
 }
 
 .icon{
@@ -61,6 +65,7 @@
 .description{
   float:left;
   width:100%;
+  margin-bottom: 50px;
 }
 
 .function{
