@@ -1,13 +1,10 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="container">
       <h1>Create a New Space</h1>
       <%= render 'form' %>
-      <%= link_to 'Back', spaces_path %>
     </div>
-  </div>
-</div>
+
+          <%= link_to 'Back', spaces_path %>
 
 <%= content_for(:after_js) do %>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyAljlH6KfD8t7Gd-IavyYX8RjYmgjxc2dM"></script>

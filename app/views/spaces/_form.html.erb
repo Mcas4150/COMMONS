@@ -1,7 +1,7 @@
 
 <%= simple_form_for(@space) do |f| %>
 
-    <%= f.input :name %>
+    <%= f.input :name, label_html: {class: 'control-label'}%>
     <%= f.input :address, placeholder: "" %>
     <%= f.input :category %>
     <%= f.input :noise %>
