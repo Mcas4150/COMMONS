@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_space, only: [:new, :show, :create]
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: [:show, :edit, :update]
 
   def new
     @event = Event.new
@@ -32,15 +32,21 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @event.save
   end
 
   def update
+    if @event.update(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_path(@event)
+    redirect_to events_path
   end
 
 private
@@ -57,6 +63,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from, :space, :name, images: [])
+    params.require(:event).permit(:to, :from, :user_id, :space, :name, images: [])
   end
 end
