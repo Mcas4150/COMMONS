@@ -36,16 +36,20 @@
 }
 .icons-text{
   width:100%;
+  justify-content: space-around;
+  display:flex;
+  margin-bottom: 10px;
+
 }
 
 .icon{
   float: left;
-  width:200px;
-  color: $green;
+  width:100px;
+  color: $brand-color;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 *:before{
@@ -61,6 +65,7 @@
 .description{
   float:left;
   width:100%;
+  margin-bottom: 50px;
 }
 
 .function{

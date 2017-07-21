@@ -1,0 +1,32 @@
+.banner {
+  &:before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    background-size: cover !important;
+    background-image: image-url("montreal.JPG");
+    filter: grayscale(1) brightness(0.5);
+    -webkit-filter: grayscale(1) brightness(0.7);
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: $white;
+    text-align: center;
+  }
+
+  .buttons {
+    text-align: center;
+  }
+}

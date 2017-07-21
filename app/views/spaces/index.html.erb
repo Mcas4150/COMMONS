@@ -8,7 +8,7 @@
     </div>
 
     <div class="buttons">
-      <%= button_to "Find a Space", spaces_path, {class: "btn button main-btn"} %>
+      <%= link_to "View Events", events_path, {class: "btn button main-btn"} %>
     </div>
 
   </div>
@@ -20,17 +20,17 @@
     <% @spaces.each do |space| %>
       <div>
          <%= link_to space_path(space) do %>
-          <% if space.images? %>
-              <div class="card" style="background-image: url(<%= cl_image_path(space.images.last.path) %>);">
-              </div>
-               <% else %>
-            <div class="card-header" style="background-image: url(); height: 200px;">
+          <div class="card">
+            <% if space.images? %>
+              <div class="card-image" style="background-image: url('<%= cl_image_path(space.images.last.path) %>');" ></div>
+            <% else %>
+              <div class="card-image" style="background-image: url('<%= image_path('montreal.JPG') %>');" ></div>
+              <% end %>
+            <div class="card-body" style="font-size:30px; height:200px; width:200px">
+              <h2><%= space.name %></h2>
+              <p><%= space.category %></p>
+              <p>$<%= space.price %></p>
             </div>
-            <% end %>
-          <div class="card-body" style="font-size:30px;">
-            <h2><%= space.name %></h2>
-            <p><%= space.category %></p>
-            <p><%= space.price %></p>
           </div>
         <% end %>
       </div>
@@ -40,5 +40,5 @@
 
 
 <div class="text-center padded">
-  <%= link_to "Add a Space", new_space_path, class: "btn btn-cool" %>
+  <%= link_to "Add a Space", new_space_path, class: "btn btn main-btn" %>
 </div>

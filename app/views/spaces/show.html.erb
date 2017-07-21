@@ -6,9 +6,9 @@
   <% end %>
 </div>
 
-<div class="container">
-  <div class="left-pack">
-    <div class="title2"> <%= @space.name %></div>
+<div class="container flex-container">
+    <div class="card card-large">
+    <h2> <%= @space.name %></h2>
       <p><%= @space.address%></p>
       <p>Category: <%= @space.category %></p>
     <div class="icons-text">
@@ -26,33 +26,17 @@
       </div>
     </div>
     <div class="description">
-      <p><%= @space.description %></p>
+      <%= @space.description %>
     </div>
     <div class="function">
-      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg" %>
-      <% if user_signed_in? && (current_user.id == @space.user_id) %>
-        <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg"%>
-      <% end %>
-      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg" %>
+      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg main-btn main-btn-small" %>
     </div>
-  </div>
-  <div class="right-pack curvy">
-    <div class="title_window">Past events</div>
-    <div class="event">
-      <% @space.events.each do |event| %>
-      <div class="card">
-      <% unless event.images == [] %>
-        <div class="photo"> <%= cl_image_tag(event.images.first.path, {:width => 302, :height => 202, crop: :fill}) %></div>
-        <% end %>
-        <div class="description"><%= event.name %></div>
-      </div>
-      <% end %>
     </div>
-
-  </div>
 </div>
+    <div id="map" class= "curvy"></div>d
 
-<div id="map" class= "curvy">
 
 
 <% content_for(:after_js) do %>
