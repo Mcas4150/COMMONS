@@ -53,9 +53,9 @@ body {
 }
 
 .btn-cool {
-  color: #4C4C4C;
+  color: $black;
   background-color: #f5f5f5;
-  border: 1px solid #4C4C4C;
+  border: 1px solid $black;
   padding: 10px 15px;
   border-radius: 50px;
   font-weight: lighter;
@@ -65,12 +65,12 @@ body {
 .btn-cool:hover {
   opacity: 1;
   text-decoration: none;
-  color: #8BB8A8;
-  background-color:#4C4C4C;
+  color: $brand-color;
+  background-color:$black;
 }
 
 h1 {
-  text-border: 1px solid #8BB8A8;
+  text-border: 1px solid $brand-color;
 
 }
 
@@ -109,11 +109,11 @@ h1 {
 }
 
 a {
-  color: #8BB8A8;
+  color: $brand-color;
   &:hover {
 
 
-      color: #8BB8A8;
+      color: $brand-color;
 
     }
 
@@ -123,7 +123,7 @@ a {
 .dropdown li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #8BB8A8 !important;
+  color: $brand-color !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -140,6 +140,6 @@ a {
     align-items: center;
 }
 .btn-info:hover {
-  background-color: #4C4C4C;
-  border-color: #4C4C4C;
+  background-color: $black;
+  border-color: $black;
 }
