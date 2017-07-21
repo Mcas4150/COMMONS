@@ -25,9 +25,6 @@
 .card-contents{
   text-align: left;
 }
-.card-description h2 {
-  font-size: 24px;
-}
 .card-description p {
   font-size: 13px;
 }
@@ -53,12 +50,13 @@
   width: 325px;
   background-size: cover;
   border: 3px solid $black;
+  border-bottom: 5px solid $black;
   background-color: white;
-  flex-direction: row;
-  flex-wrap: wrap;
+  overflow: hidden;
   .card-image {
-    width: 300px;
+    width: 325px;
     height:275px;
+    margin: -5px;
     background-size: cover;
   }
   a {
@@ -72,20 +70,23 @@
 p {
   font-family:$base-font;
   font-weight: bold;
-  color: $black;
-  font-size: 0.5em;
+  color: $brand-color;
+  font-size: 0.75em;
   margin-bottom: 0em;
   position: relative;
-  top: 290px;
+  top: -50px;
   margin-left: 20px;
+  clear: both;
 }
 h2 {
   font-family:$base-font;
-  color: $black;
-  font-size: 0.5em;
-  margin: 0 0 0.5em 0;
-  margin-left:20px;
+  color: $white;
+  background-color: $black;
+  font-size: 1em;
+  margin-left: -5px;
+  padding: 5px;
   position: relative;
-  top: 290px;
-
+  top: -50px;
+  float: left;
+  display: inline;
 }
