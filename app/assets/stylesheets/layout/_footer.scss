@@ -2,31 +2,28 @@
 // Your footer style
 
 .footer-basic-centered{
-  background-color: #4C4C4C;
+  background-color: $black;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
   text-align: center;
   font: normal 18px sans-serif;
   bottom: 0px;
-
   padding: 20px;
-
-
-  color:  #8BB8A8;
+  color:  $brand-color;
   font-size: 24px;
 
 }
 
 .footer-basic-centered .footer-company-motto{
-  color:  #8BB8A8;
+  color:  $brand-color;
   font-size: 24px;
   margin: 0px;
   vertical-align: middle;
 }
 
 .footer-basic-centered .footer-company-name{
-  color:  #8BB8A8;
+  color:  $brand-color;
   font-size: 14px;
   margin: 0;
 }
@@ -47,12 +44,18 @@
 
 .btn-info {
   margin-left: 881px;
-  color: #8BB8A8;
-  background-color: #4C4C4C;
-  border-color: #4C4C4C;
+  color: $brand-color;
+  background-color: $black;
+  border-color: $black;
 }
 
 .btn-info:hover {
   color: #85C7F2;
-  background-color: #4C4C4C;
+  background-color: $black;
+}
+
+footer {
+  img {
+    height: 5vh;
+  }
 }
