@@ -21,8 +21,9 @@
       <div>
          <%= link_to space_path(space) do %>
           <% if space.images? %>
-              <div class="card" style="background-image: url(<%= cl_image_path(space.images.last.path) %>);">
-              </div>
+              <div class="card">
+              <%= cl_image_tag(space.images.last.path) %>
+
                <% else %>
             <div class="card-header" style="background-image: url(); height: 200px;">
             </div>
@@ -31,6 +32,7 @@
             <h2><%= space.name %></h2>
             <p><%= space.category %></p>
             <p><%= space.price %></p>
+          </div>
           </div>
         <% end %>
       </div>
