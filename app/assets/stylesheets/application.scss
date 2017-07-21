@@ -82,6 +82,56 @@ h1 {
 }
 
 
+.card {
+  border-radius: 4px;
+  margin: 0px;
+  padding: 5px;
+  min-height: 300px;
+  min-width: 300px;
+  background-size: cover;
+  border: 5px solid $black;
+}
+
+a, a p, a h2 {
+  &:hover {
+    text-decoration: none;
+  }
+}
+p {
+  font-family:$base-font;
+  font-weight: bold;
+  color: white;
+  font-size: 0.5em;
+  margin-bottom: 0em;
+  position: relative;
+  top: 227px;
+  margin-left: 20px;
+}
+
+
+h2 {
+  font-family:$base-font;
+  color: white;
+  font-size: 0.5em;
+  margin: 0 0 0.5em 0;
+  margin-left:20px;
+  position: relative;
+  top: 225px;
+
+}
+
+
+
+a {
+  color: #8BB8A8;
+
+  &:hover {
+    color: #8BB8A8;
+  }
+>>>>>>> Stashed changes
+}
+
+
 .dropdown li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;

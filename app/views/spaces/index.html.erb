@@ -22,7 +22,11 @@
          <%= link_to space_path(space) do %>
           <% if space.images? %>
               <div class="card">
+<<<<<<< Updated upstream
               <div class="card-image" style="background-image: url('<%= cl_image_path(space.images.last.path) %>');" >
+=======
+              <%= cl_image_tag(space.images.last.path) %>
+>>>>>>> Stashed changes
 
                <% else %>
             <div class="card-header" style="background-image: url(); height: 200px; width:200px">
