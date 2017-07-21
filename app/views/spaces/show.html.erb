@@ -36,7 +36,16 @@
   </div>
   <div class="right-pack curvy">
     <div class="title_window">Past events</div>
-
+    <div class="event">
+      <% @space.events.each do |event| %>
+      <div class="card">
+      <% unless event.images == [] %>
+        <div class="photo"> <%= cl_image_tag(event.images.first.path, {:width => 100, :height => 100, crop: :fill}) %></div>
+        <% end %>
+        <div class="description"><%= event.name %></div>
+      </div>
+      <% end %>
+    </div>
 
   </div>
 </div>
