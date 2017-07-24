@@ -22,8 +22,11 @@ class EventsController < ApplicationController
     @event.from = Date.strptime(to, "%m/%d/%Y")
     @event.to = Date.strptime(to, "%m/%d/%Y")
     @event.space = @space
+    booking  = Booking.new(spaces_sku: @space.sku, amount: @space.price, state: 'pending')
+    booking.user = current_user
+    booking.event = @event
     # @event.user = current_user
-    if @event.save
+    if @event.save && booking.save
      EventMailer.confirmation(@event).deliver_now
       redirect_to events_path
     else

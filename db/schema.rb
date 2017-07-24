@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721142221) do
+ActiveRecord::Schema.define(version: 20170724162642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,19 @@ ActiveRecord::Schema.define(version: 20170721142221) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string   "state"
+    t.string   "spaces_sku"
+    t.integer  "amount_cents", default: 0, null: false
+    t.json     "payment"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.index ["event_id"], name: "index_bookings_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -94,17 +107,18 @@ ActiveRecord::Schema.define(version: 20170721142221) do
   create_table "spaces", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "price"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "category"
     t.integer  "capacity"
     t.string   "images"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "address"
     t.string   "noise"
+    t.integer  "price_cents", default: 0, null: false
+    t.string   "sku"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 
@@ -129,10 +143,13 @@ ActiveRecord::Schema.define(version: 20170721142221) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
+    t.string   "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "events"
+  add_foreign_key "bookings", "users"
   add_foreign_key "events", "spaces"
   add_foreign_key "events", "users"
   add_foreign_key "reviewevents", "events"

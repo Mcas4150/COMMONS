@@ -23,6 +23,7 @@ class SpacesController < ApplicationController
   def create
     @space = Space.new(space_params)
     @space.user = current_user
+    @space.sku = params[:space][:name].downcase.gsub(' ', '-')
     if @space.save
       redirect_to space_path(@space)
     end

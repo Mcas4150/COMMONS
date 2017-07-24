@@ -2,6 +2,7 @@ class Event < ApplicationRecord
 
   belongs_to :space
   belongs_to :user
+  has_one :booking
   has_many :reviewevents
   has_attachments :images, maximum: 4
 
