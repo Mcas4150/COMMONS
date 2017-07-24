@@ -1,19 +1,18 @@
 <div class="banner">
   <div class="banner-content sweet">
-
-
     <div class="branding">
       <%= image_tag "logo_white.png" %>
       <h1>Commons</h1>
     </div>
-
-    <div class="buttons">
-      <%= link_to "View Events", events_path, {class: "btn button main-btn"} %>
-    </div>
-
   </div>
 </div>
 
+<div class="tabs">
+  <a><%= link_to "All", spaces_path, {class: "tab"} %></a>
+  <a><%= link_to "Venue", spaces_path, {class: "tab"} %></a>
+  <a><%= link_to "Working Space", spaces_path, {class: "tab"} %></a>
+  <a><%= link_to "Other", spaces_path, {class: "tab"} %></a>
+</div>
 
 
   <div class="spaces-display">
