@@ -1,16 +1,10 @@
-<%= simple_form_for [@space, @event] do |f| %>
-  <%# f.hidden_field :record_id, value: @record.id %>
+<%= simple_form_for(@space, @event) do |f| %>
 
+    <%= f.input :name, label_html: {class: 'control-label'}%>
+    <%= f.input :pitch, placeholder: "What do you want to use the space for?" %>
+    <%= f.text_field :form, event: [:day, :month, :year], class: "datepicker", :placeholder => 'Rental date' %>
+    <%= f.text_field :to, event: [:day, :month, :year], class: "datepicker", :placeholder => 'End date' %>
+    <%= f.input :images, as: :attachinary %>
+    <%= f.button :submit, class: "btn btn-cool"  %>
 
-
-  <p><%= f.input_field :name, placeholder: "Event name" %></p>
-  <p><%= f.input_field :pitch, placeholder: "pitch your idea for this space" %></p>
-  <%= f.text_field :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
-  <br/>
-  <%= f.text_field :to, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Return date' %>
-  <br/>
-  <%= f.input :images, as: :attachinary %>
-    <br/>
-  <br/>
-  <%= f.submit "Confirm Event", class: "btn btn-cool" %>
 <% end %>
