@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .slick-next{
-  right: 25px;
+  right: 50px;
   z-index: 100;
 }
 .slick-prev {
@@ -22,6 +22,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.slick-prev:before, .slick-next:before {
+  opacity: 0.9;
+  font-size: 60px;
 }
 
 .left-pack{
