@@ -9,30 +9,32 @@
 <div class="container flex-container">
     <div class="card card-large">
     <h2> <%= @space.name %></h2>
-      <p><%= @space.address%></p>
-      <p>Category: <%= @space.category %></p>
-    <div class="icons-text">
+      <div class="icons-text">
       <div class="icon">
-        <i class="fa fa-usd fa-3x center-block" aria-hidden="true"></i>
-        <h3><%= @space.price %></h3>
+        <p>Starting Price</p>
+        <div>
+          <i class="fa fa-usd fa-3x center-block" aria-hidden="true"></i>
+          <h3><%= @space.price %></h3>
+        </div>
       </div>
       <div class="icon">
+      <p>Max Capacity</p>
+      <div>
         <i class="fa fa-users fa-3x center-block" aria-hidden="true"></i>
         <h3><%= @space.capacity %>people</h3>
       </div>
+
+      </div>
       <div class="icon">
+      <p>Noise Restrictions</p>
+      <div>
         <i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
         <h3><%= @space.noise %></h3>
       </div>
+
+      </div>
     </div>
-    <div class="description">
-      <%= @space.description %>
-    </div>
-    <div class="function">
-      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
-      <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
-      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg main-btn main-btn-small" %>
-    </div>
+
     </div>
 </div>
     <div id="map" class= "curvy"></div>d
