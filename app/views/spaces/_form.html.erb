@@ -2,7 +2,7 @@
 <%= simple_form_for(@space) do |f| %>
     <%= f.input :name, label_html: {class: 'control-label'}%>
     <%= f.input :address, placeholder: "" %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: ["Venue", "Working Space", "Others"] %>
     <%= f.input :noise %>
     <%= f.input :capacity %>
     <%= f.input :description %>
