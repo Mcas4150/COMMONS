@@ -21,7 +21,7 @@
       <p>Max Capacity</p>
       <div>
         <i class="fa fa-users fa-3x center-block" aria-hidden="true"></i>
-        <h3><%= @space.capacity %>people</h3>
+        <h3><%= @space.capacity %></h3>
       </div>
 
       </div>
@@ -34,10 +34,25 @@
 
       </div>
     </div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<div class="card auto-width auto-height" >
+  <h3> <strong>Address:</strong> <%=@space.address %></h3>
+  <h3> <strong> Description:</strong> <%= @space.description %></h3>
+<div class="function">
+    <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+</div>
 
+</div>
+</div>
+    <div class="col-sm-6">
+    <div id="map" class= "curvy"></div>
     </div>
 </div>
-    <div id="map" class= "curvy"></div>d
+</div>
 
 
 
