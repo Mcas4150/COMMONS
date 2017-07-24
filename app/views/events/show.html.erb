@@ -3,6 +3,23 @@
 
 
 
+
+ <h2>
+ <%= pluralize @event.messages.size, "message" %>
+ </h2>
+
+<div id="messages">
+  <% if @event.messages.blank? %>
+    leave a message for <%= @event.name %>
+  <% else %>
+    <% @event.messages.each do |message| %>
+      <%= render 'messages/show', message: message %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= render 'messages/form', event: @event, message: Message.new%>
+
  <h2>
  <%= pluralize @event.reviewevents.size, "review" %>
  </h2>

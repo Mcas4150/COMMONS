@@ -1,0 +1,13 @@
+<% if @message.errors.any? %>
+
+  $('#new_message').html("<%= j render 'messages/form', event: @event, message: @message %>");
+<% else %>
+
+  var new_message = $("<%= j render 'messages/show', message: @message %>").hide();
+
+  $('#messages').append(new_message);
+
+  new_message.slideDown();
+
+  $('#new_message').html("<%= j render 'messages/form', event: @event, message: Message.new %>");
+<% end %>

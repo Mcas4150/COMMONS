@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_one :booking
   has_many :reviewevents
+  has_many :messages
   has_attachments :images, maximum: 4
 
   validates :name, presence: true

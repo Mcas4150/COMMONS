@@ -48,13 +48,16 @@
 }
 
 .icon{
-  float: left;
+
   width:100px;
   color: $brand-color;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
+  height: 78px;
+  position: relative;
+  top: -65px;
 }
 
 *:before{
@@ -64,6 +67,9 @@
 
 .icon h3{
   text-align: center;
+  color: $white;
+  font-size: 23px;
+
 }
 
 
@@ -98,3 +104,4 @@
   height: 400px;
   margin:0 auto;
 }
+
