@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :spaces
   has_many :reviewspaces
   has_many :reviewevents
-
+  has_many :bookings
 
   def name
     "#{email }"

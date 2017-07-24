@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :events, only: [:new, :create, :show, :destroy, :edit, :update]
   end
 
+  resources :bookings, only: [] do
+    resources :payments, only: [:create]
+  end
+
 resources :events, only: [:index, :edit, :update] do
   resources :reviewevents, only: :create
 end
