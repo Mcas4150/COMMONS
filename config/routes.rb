@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :spaces do
     resources :events, only: [:new, :create, :show, :destroy, :edit, :update]
+
   end
 
   resources :bookings, only: [] do
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
 
 resources :events, only: [:index, :edit, :update] do
   resources :reviewevents, only: :create
+  resources :messages, only: [:index, :create, :show]
 end
 
 
