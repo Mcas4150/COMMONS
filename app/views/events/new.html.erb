@@ -6,9 +6,9 @@
     <%= f.input :pitch, placeholder: "What would you like to use the space for?" %>
     <%= f.text_field :from, event: [:day, :month, :year], class: "datepicker", :placeholder => 'Rental date' %>
     <%= f.text_field :to, event: [:day, :month, :year], class: "datepicker", :placeholder => 'End date' %>
-    <%= f.button :submit, class: "btn btn-cool"  %>
+    <%= f.button :submit, class: "btn btn-primary btn-lg main-btn main-btn-small"  %>
 
 <% end %>
 
-  <%= link_to 'Back', spaces_path %>
+
 </div>
