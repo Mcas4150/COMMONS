@@ -49,7 +49,7 @@
 
 .icon{
 
-  width:100px;
+  width:200px;
   color: $brand-color;
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@
 
 .icon h3{
   text-align: center;
-  color: $white;
+  color: $brand-color;
   font-size: 23px;
 
 }
@@ -104,4 +104,12 @@
   height: 400px;
   margin:0 auto;
 }
+.auto-width {
+  width: auto;
+}
+
+.span.bold {
+  font-weight: 800;
+}
+
 
