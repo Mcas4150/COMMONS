@@ -3,20 +3,25 @@
 
 
 
+<div class="messenger">
  <h2>
- <%= pluralize @event.reviewevents.size, "review" %>
+ <%= pluralize @event.messages.size, "message" %>
  </h2>
 
-<div id="reviews">
-  <% if @event.reviewevents.blank? %>
-    Be the first to leave a review for <%= @event.name %>
-  <% else %>
-    <% @event.reviewevents.each do |review| %>
-      <%= render 'reviewevents/show', reviewevent: review %>
+  <div id="messages">
+    <% if @event.messages.blank? %>
+      leave a message for <%= @event.name %>
+    <% else %>
+      <% @event.messages.each do |message| %>
+        <%= render 'messages/show', message: message %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <%= render 'messages/form', event: @event, message: Message.new%>
 </div>
 
+<div class="payer">
 <h1>Pay for your event</h1>
 <%= form_tag booking_payments_path(@event.booking) do %>
   <article>
@@ -33,8 +38,25 @@
     data-amount="<%= @event.booking.amount_cents %>"
     data-currency="<%= @event.booking.amount.currency %>"></script>
 <% end %>
+</div>
 
-<%= render 'reviewevents/form', event: @event, reviewevent: Reviewevent.new%>
+
+<div class="reviewer">
+ <h2>
+ <%= pluralize @event.reviewevents.size, "review" %>
+ </h2>
+
+  <div id="reviews">
+    <% if @event.reviewevents.blank? %>
+      Be the first to leave a review for <%= @event.name %>
+    <% else %>
+      <% @event.reviewevents.each do |review| %>
+        <%= render 'reviewevents/show', reviewevent: review %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render 'reviewevents/form', event: @event, reviewevent: Reviewevent.new%>
+</div>
 
 
 

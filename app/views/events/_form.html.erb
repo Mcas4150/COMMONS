@@ -1,6 +1,7 @@
-<%= simple_form_for(@space, @event) do |f| %>
+<%= simple_form_for [@space, @event] do |f| %>
 
-    <%= f.input :name, label_html: {class: 'control-label'}%>
+
+    <%= f.input :name, placeholder: "Event name" %></p>
     <%= f.input :pitch, placeholder: "What do you want to use the space for?" %>
     <%= f.text_field :form, event: [:day, :month, :year], class: "datepicker", :placeholder => 'Rental date' %>
     <%= f.text_field :to, event: [:day, :month, :year], class: "datepicker", :placeholder => 'End date' %>

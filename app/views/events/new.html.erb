@@ -1,14 +1,7 @@
 <div class="form-container">
 
+<h1>Create Your Event</h1>
  <h2><%= @space.name %></h2>
-
-    <%= simple_form_for [@space, @event] do |f| %>
-    <%= f.input :pitch, placeholder: "What would you like to use the space for?" %>
-    <%= f.text_field :from, event: [:day, :month, :year], class: "datepicker", :placeholder => 'Rental date' %>
-    <%= f.text_field :to, event: [:day, :month, :year], class: "datepicker", :placeholder => 'End date' %>
-    <%= f.button :submit, class: "btn btn-primary btn-lg main-btn main-btn-small"  %>
-
-<% end %>
-
+  <%= render 'form' %>
 
 </div>

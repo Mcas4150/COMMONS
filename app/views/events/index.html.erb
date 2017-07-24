@@ -6,7 +6,7 @@
           <%= link_to space_event_path(event.space, event) do %>
           <% if event.images? %>
             <!--  <div class="card text-center"> -->
-              <div class="card" style="background-image: url(<%= cl_image_path(event.images) %>); height: 300px; width : 300px; padding: 10px;" >
+              <div class="card" style="background-image: url(<%= cl_image_path(event.images.last.path) %>); height: 300px; width : 300px; padding: 10px;" >
              </div>
              <% else %>
             <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;">
