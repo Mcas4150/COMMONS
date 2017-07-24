@@ -1,16 +1,11 @@
 <%= simple_form_for [@space, @event] do |f| %>
-  <%# f.hidden_field :record_id, value: @record.id %>
 
-
-
-  <p><%= f.input_field :name, placeholder: "Event name" %></p>
-  <p><%= f.input_field :pitch, placeholder: "pitch your idea for this space" %></p>
-  <%= f.text_field :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
-  <br/>
-  <%= f.text_field :to, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Return date' %>
-  <br/>
+  <p><%= f.input :name, placeholder: "Event name" %></p>
+  <p><%= f.input :pitch, placeholder: "pitch your idea for this space" %></p>
+  <p><%= f.input :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
+  <%= f.input :to, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Return date' %> </p>
   <%= f.input :images, as: :attachinary %>
-    <br/>
-  <br/>
-  <%= f.submit "Confirm Event", class: "btn btn-cool" %>
-<% end %>
+  <%= f.button :submit, "Confirm Event", class: "btn btn-cool form-group" %>
+  </br>
+  <%= link_to 'Back', spaces_path, class: "form-group" %>
+<% end %>　
