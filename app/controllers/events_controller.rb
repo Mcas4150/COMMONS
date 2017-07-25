@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.where(public: true)
   end
 
   def show
