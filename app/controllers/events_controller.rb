@@ -19,10 +19,11 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     from = params[:event][:from]
     to = params[:event][:to]
-    @event.from = Date.strptime(to, "%m/%d/%Y")
+    @event.from = Date.strptime(from, "%m/%d/%Y")
     @event.to = Date.strptime(to, "%m/%d/%Y")
+    number_of_days = ((Date.strptime(to, "%m/%d/%Y") - Date.strptime(from, "%m/%d/%Y")) + 1).to_i
     @event.space = @space
-    booking  = Booking.new(spaces_sku: @space.sku, amount: @space.price, state: 'pending')
+    booking  = Booking.new(spaces_sku: @space.sku, amount: @space.price * number_of_days, state: 'pending')
     booking.user = current_user
     booking.event = @event
     # @event.user = current_user
@@ -66,6 +67,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from, :user_id, :space, :name, images: [])
+    params.require(:event).permit(:to, :from, :user_id, :pitch, :space, :name, images: [])
   end
 end

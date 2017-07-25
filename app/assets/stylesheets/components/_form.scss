@@ -24,7 +24,7 @@ $mf-checkbox-top: 0 !default;
 $mf-radio-margin: $font-size-base / -4 !default;
 
 // Colors
-$mf-input-color: $black !default;
+$mf-input-color: $brand-color !default;
 $mf-label-color: lighten($brand-color, 10%) !default;
 $mf-active-color: darken($brand-color, 10%) !default;
 $mf-focus-color: #337ab7 !default;
@@ -57,6 +57,11 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin: 0 0 2em;
+  color: $brand-color
+}
+
+h2 {
+  color: $brand-color;
 }
 
 .form-container {

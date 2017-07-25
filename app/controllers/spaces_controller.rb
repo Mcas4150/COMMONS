@@ -4,7 +4,11 @@ class SpacesController < ApplicationController
 
 
   def index
-    @spaces = Space.all
+    if params[:category]
+      @spaces = Space.where(category: params[:category])
+    else
+      @spaces = Space.all
+    end
   end
 
   def show

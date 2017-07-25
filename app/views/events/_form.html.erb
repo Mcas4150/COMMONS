@@ -1,11 +1,12 @@
 <%= simple_form_for [@space, @event] do |f| %>
 
-  <p><%= f.input :name, placeholder: "Event name" %></p>
-  <p><%= f.input :pitch, placeholder: "pitch your idea for this space" %></p>
-  <p><%= f.text_field :from, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Rental date' %>
-  <%= f.text_field :to, event: [:day, :month, :year],class: "datepicker", :placeholder => 'Return date' %> </p>
-  <%= f.input :images, as: :attachinary %>
-  <%= f.button :submit, "Confirm Event", class: "btn btn-cool form-group" %>
-  </br>
-  <%= link_to 'Back', spaces_path, class: "form-group" %>
-<% end %>　
+
+    <%= f.input :name, placeholder: "Event name" %></p>
+    <%= f.input :pitch, placeholder: "What do you want to use the space for?" %>
+    <%= f.input :publicity, collection: ["Public","Private"]%>
+    <%= f.text_field :from, event: [:day, :month, :year], class: "datepicker", :placeholder => 'Rental date' %>
+    <%= f.text_field :to, event: [:day, :month, :year], class: "datepicker", :placeholder => 'End date' %>
+    <%= f.input :images, as: :attachinary %>
+    <%= f.button :submit, class: "btn btn-primary btn-lg main-btn main-btn-small" %>
+
+<% end %>

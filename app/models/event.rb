@@ -7,6 +7,8 @@ class Event < ApplicationRecord
   has_many :messages
   has_attachments :images, maximum: 4
 
+
+
   validates :name, presence: true
   # validates :admission, presence: true
 

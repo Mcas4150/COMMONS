@@ -1,13 +1,14 @@
 
 <%= simple_form_for(@space) do |f| %>
     <%= f.input :name, label_html: {class: 'control-label'}%>
-    <%= f.input :address, placeholder: "" %>
-    <%= f.input :category %>
-    <%= f.input :noise %>
-    <%= f.input :capacity %>
-    <%= f.input :description %>
-    <%= f.input :price %>
+    <%= f.input :address, placeholder: "address" %>
+    <%= f.input :category, collection: ["Venue", "Working-Space", "Others"] %>
+    <%= f.input :noise, label: "noise restrictions", collection: ["yes", "no"] %>
+    <%= f.input :capacity, label: "max capacity" %>
+    <%= f.input :description, input_html: {maxlength: 250} %>
+    <%= f.input :price, label: "starting price"%>
+
     <%= f.input :images, as: :attachinary %>
-    <%= f.button :submit, class: "btn"  %>
+    <%= f.button :submit, class: "btn btn-primary btn-lg main-btn main-btn-small"  %>
 <% end %>
 
