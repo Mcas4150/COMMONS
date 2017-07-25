@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
   belongs_to :space
   belongs_to :user
   has_one :booking
@@ -10,6 +9,13 @@ class Event < ApplicationRecord
 
 
   validates :name, presence: true
+
+  after_initialize :init
+
+  def init
+    self.public ||= true
+  end
+
   # validates :admission, presence: true
 
 

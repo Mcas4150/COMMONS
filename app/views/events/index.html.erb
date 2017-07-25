@@ -3,13 +3,15 @@
 
 <div class="events-display">
   <% @events.each do |event| %>
-    <% if event.publicity = 'public' %>
+
     <div class="event-container">
       <%= link_to space_event_path(event.space, event) do %>
         <div class="card event-image">
           <% if event.images? %>
             <div class="card-image" style="background-image: url(
-              '<%= cl_image_path(event.images.last.path) %>');"></div>
+              '<%= cl_image_path(event.images.last.path) %>');">
+
+              </div>
           <% else %>
             <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;">
             </div>
@@ -20,21 +22,21 @@
             <p>End: <%= event.to.to_s %></p>
           </div>
         </div>
-      <% end %>
+        <% end %>
       <div class="event-description">
          <h3> <strong> Location:</strong> <%= event.space.name %>
-         <h3> <strong> Address:</strong> <%= event.space.address %>
-         <h3> <strong> Description:</strong> <%= event.pitch %></h3>
+          <strong> Address:</strong> <%= event.space.address %>
+          <strong> Description:</strong> <%= event.pitch %></h3>
 
+          </div>
+            </div>
+
+      <% end %>
       </div>
-    </div>
-  <% end %>
-  <% end %>
-</div>
 
 
-  </div>
+  <div>
   <%= link_to 'Back to Spaces', spaces_path %>
-</div>
+  </div>
 
 
