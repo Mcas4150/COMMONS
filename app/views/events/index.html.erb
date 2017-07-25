@@ -4,6 +4,7 @@
 
 <div class="events-display">
   <% @events.each do |event| %>
+    <% if event.publicity = 'public' %>
     <div class="event-container">
       <%= link_to space_event_path(event.space, event) do %>
         <div class="card event-image">
@@ -25,8 +26,10 @@
          <h3> <strong> Location:</strong> <%= event.space.name %>
          <h3> <strong> Address:</strong> <%= event.space.address %>
          <h3> <strong> Description:</strong> <%= event.pitch %></h3>
+         <h3> <strong> <%= event.publicity %></strong> </h3>
       </div>
     </div>
+  <% end %>
   <% end %>
 </div>
 
