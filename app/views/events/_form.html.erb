@@ -3,6 +3,7 @@
 
     <%= f.input :name, placeholder: "Event name" %></p>
     <%= f.input :pitch, placeholder: "What do you want to use the space for?" %>
+    <%= f.input :publicity, collection: ["Public","Private"]%>
     <%= f.text_field :from, event: [:day, :month, :year], class: "datepicker", :placeholder => 'Rental date' %>
     <%= f.text_field :to, event: [:day, :month, :year], class: "datepicker", :placeholder => 'End date' %>
     <%= f.input :images, as: :attachinary %>
