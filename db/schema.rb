@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724180951) do
+ActiveRecord::Schema.define(version: 20170725180340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170724180951) do
     t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.integer  "event_id"
+    t.boolean  "confirmation"
     t.index ["event_id"], name: "index_bookings_on_event_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
@@ -63,14 +64,16 @@ ActiveRecord::Schema.define(version: 20170724180951) do
     t.boolean  "public"
     t.integer  "admission"
     t.integer  "space_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.date     "from"
     t.date     "to"
     t.integer  "user_id"
     t.string   "pitch"
     t.string   "name"
     t.string   "images"
+    t.integer  "price_cents",  default: 0, null: false
+    t.boolean  "confirmation"
     t.index ["space_id"], name: "index_events_on_space_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
