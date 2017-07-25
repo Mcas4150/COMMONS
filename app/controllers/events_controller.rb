@@ -67,6 +67,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from, :user_id, :pitch, :space, :name, images: [])
+    params.require(:event).permit(:to, :from, :user_id, :pitch, :space, :name, :publicity, :public, images: [])
   end
 end
