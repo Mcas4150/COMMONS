@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170725165331) do
+ActiveRecord::Schema.define(version: 20170725180340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +73,6 @@ ActiveRecord::Schema.define(version: 20170725165331) do
     t.string   "name"
     t.string   "images"
     t.string   "publicity"
-
     t.integer  "price_cents",  default: 0, null: false
     t.boolean  "confirmation"
     t.index ["space_id"], name: "index_events_on_space_id", using: :btree
