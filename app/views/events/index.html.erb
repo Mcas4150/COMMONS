@@ -1,29 +1,40 @@
-<div class="container">
-  <div class="row">
-    <% @events.each do |event| %>
-      <div class="col-xs-12 col-sm-4">
-        <div style="text-decoration: none">
-          <%= link_to space_event_path(event.space, event) do %>
+
+
+<h2>Events</h2>
+
+
+<div class="events-display">
+  <% @events.each do |event| %>
+    <% if event.publicity = 'public' %>
+    <div class="event-container">
+      <%= link_to space_event_path(event.space, event) do %>
+        <div class="card event-image">
           <% if event.images? %>
-            <!--  <div class="card text-center"> -->
-              <div class="card" style="background-image: url(<%= cl_image_path(event.images.last.path) %>); height: 300px; width : 300px; padding: 10px;" >
-             </div>
-             <% else %>
+            <div class="card-image" style="background-image: url(
+              '<%= cl_image_path(event.images.last.path) %>');"></div>
+          <% else %>
             <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;">
             </div>
-            <% end %>
-          <div class="card-body poopy">
-            <h1><%= event.name %></h1>
-            <p>Location: <%= event.space.name %></p>
-            <p>Category: <%= event.space.category %></p>
+          <% end %>
+          <div class="card-body" style="font-size: 30px; height:200px; width: 200px;">
+            <h2><%= event.name %></h2>
             <p>Start: <%= event.from.to_s %></p>
             <p>End: <%= event.to.to_s %></p>
           </div>
-        <!-- </div> -->
-          <% end %>
         </div>
-        </div>
-       <% end %>
+      <% end %>
+      <div class="event-description">
+         <h3> <strong> Location:</strong> <%= event.space.name %>
+         <h3> <strong> Address:</strong> <%= event.space.address %>
+         <h3> <strong> Description:</strong> <%= event.pitch %></h3>
+         <h3> <strong> <%= event.publicity %></strong> </h3>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>
+
+
   </div>
   <%= link_to 'Back to Spaces', spaces_path %>
 </div>
