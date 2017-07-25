@@ -2,7 +2,7 @@
   <div class="row">
     <% @events.each do |event| %>
       <div class="col-xs-12 col-sm-4">
-        <div>
+        <div style="text-decoration: none">
           <%= link_to space_event_path(event.space, event) do %>
           <% if event.images? %>
             <!--  <div class="card text-center"> -->
