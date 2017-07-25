@@ -8,10 +8,27 @@
 </div>
 
 <div class="tabs">
-  <a><%= link_to "All", spaces_path, {class: "tab"} %></a>
-  <a><%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab"} %></a>
-  <a><%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab"} %></a>
-  <a><%= link_to "Others", spaces_path(category:"Others"), {class: "tab"} %></a>
+  <% if params[:category] == "Venue" %>
+    <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
+    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab active", datatab: "tab-2"} %>
+    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
+    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab", datatab: "tab-4"} %>
+  <% elsif params[:category] == "Working-Space" %>
+    <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
+    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
+    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab active", datatab: "tab-3"} %>
+    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab", datatab: "tab-4"} %>
+  <% elsif params[:category] == "Others" %>
+    <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
+    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
+    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
+    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab active", datatab: "tab-4"} %>
+    <% else %>
+    <%= link_to "All", spaces_path, {class: "tab active", datatab: "tab-1"} %>
+    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
+    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
+    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab", datatab: "tab-4"} %>
+    <% end %>
 </div>
 
 
@@ -41,3 +58,19 @@
 <div class="text-center padded">
   <%= link_to "Add a Space", new_space_path, class: "btn btn main-btn" %>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script>
+    $(document).ready(function(){
+
+    $('.tabs a').click(function(){
+        var tab_id = $(this).attr('datatab');
+
+        $('.tabs a').removeClass('current');
+
+        $(this).addClass('current');
+    })
+})
+  </script>
+<% end %>
+

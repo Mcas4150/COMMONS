@@ -13,6 +13,8 @@
   opacity: 0.8;
   border-bottom: 3px solid $green;
 }
+
+
 .tabs h3 {
   font-size: 17px;
   font-weight: bold;
@@ -28,13 +30,10 @@
   text-align: center;
   padding: 20px 0;
 }
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
+
+
 .tab.active {
-  background: white;
-  color: black;
+  text-decoration: none;
+  border-bottom: 3px solid $green;
+  background-color: rgba(92, 93, 96, 0.1);
 }
