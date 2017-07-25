@@ -3,7 +3,7 @@
 
 <div class="events-display">
   <% @events.each do |event| %>
-    <% if event.publicity = 'public' %>
+    <% if event.publicity = 'Public' %>
     <div class="event-container">
       <%= link_to space_event_path(event.space, event) do %>
         <div class="card event-image">
@@ -33,7 +33,7 @@
 </div>
 
 
-  </div>
+<div>
   <%= link_to 'Back to Spaces', spaces_path %>
 </div>
 

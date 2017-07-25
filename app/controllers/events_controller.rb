@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.where(public: true)
+    @events = Event.all
   end
 
   def show
@@ -20,13 +20,17 @@ class EventsController < ApplicationController
     from = params[:event][:from]
     to = params[:event][:to]
     @event.from = Date.strptime(from, "%m/%d/%Y")
+    @event_start = @event.from
     @event.to = Date.strptime(to, "%m/%d/%Y")
+    @event_finish = @event.to
     number_of_days = ((Date.strptime(to, "%m/%d/%Y") - Date.strptime(from, "%m/%d/%Y")) + 1).to_i
     @event.space = @space
+
     booking  = Booking.new(spaces_sku: @space.sku, amount: @space.price * number_of_days, state: 'pending')
     booking.user = current_user
     booking.event = @event
-    # @event.user = current_user
+
+    @event.user = current_user
     if @event.save && booking.save
      EventMailer.confirmation(@event).deliver_now
       redirect_to events_path
@@ -67,6 +71,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from, :user_id, :pitch, :space, :name, images: [])
+    params.require(:event).permit(:to, :from, :user_id, :pitch, :space, :name, :publicity, :public, images: [])
   end
 end
