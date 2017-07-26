@@ -114,3 +114,44 @@ h2 {
   }
 }
 
+.event-card {
+  border: none;
+  border-bottom: 5px solid;
+  h3 {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4em;
+  }
+  .function {
+    padding: 5px;
+  }
+}
+
+.event-card-index {
+  height: 400px;
+  .card-body {
+    height: auto!important;
+    width: auto!important;
+    .date {
+      position: absolute;
+      top: 330px;
+      p {
+        padding-left: 1em;
+        text-align: left;
+      }
+    }
+  }
+}
+.event-description {
+  word-wrap: break-word;
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.4em;
+  }
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
