@@ -2,7 +2,8 @@
 
 <div class="events-display">
   <% @events.each do |event| %>
-    <% if event.publicity = 'Public' %>
+
+    <% if event.publicity == 'Public' && event.confirmation == true %>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6">
