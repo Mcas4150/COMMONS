@@ -19,11 +19,19 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     from = params[:event][:from]
     to = params[:event][:to]
-    @event.from = Date.strptime(to, "%m/%d/%Y")
+    @event.from = Date.strptime(from, "%m/%d/%Y")
+    @event_start = @event.from
     @event.to = Date.strptime(to, "%m/%d/%Y")
+    @event_finish = @event.to
+    number_of_days = ((Date.strptime(to, "%m/%d/%Y") - Date.strptime(from, "%m/%d/%Y")) + 1).to_i
     @event.space = @space
-    # @event.user = current_user
-    if @event.save
+
+    booking  = Booking.new(spaces_sku: @space.sku, amount: @space.price * number_of_days, state: 'pending')
+    booking.user = current_user
+    booking.event = @event
+
+    @event.user = current_user
+    if @event.save && booking.save
      EventMailer.confirmation(@event).deliver_now
       redirect_to events_path
     else
@@ -41,6 +49,12 @@ class EventsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def confirm
+    @event = Event.find(params[:event])
+    @event.update(confirmation: !@event.confirmation)
+    @event.save
   end
 
   def destroy
@@ -63,6 +77,6 @@ private
   end
 
   def event_params
-    params.require(:event).permit(:to, :from, :user_id, :space, :name, images: [])
+    params.require(:event).permit(:to, :from, :user_id, :pitch, :space, :name, :publicity, :public, images: [])
   end
 end

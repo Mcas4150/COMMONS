@@ -1,0 +1,110 @@
+<img src="<%= @user.facebook_picture_url %>">
+<%= @user.email %>
+<%= @user.first_name %>
+<%= @user.last_name %>
+
+
+<div class="events-display">
+  <% @events.each do |event| %>
+    <% if event.space.user == current_user %> <%# for　Space's Owner %>
+      <div class="event-container">
+        <%= link_to space_event_path(event.space, event) do %>
+          <div class="card event-image">
+            <% if event.images? %>
+              <div class="card-image" style="background-image: url(
+                '<%= cl_image_path(event.images.last.path) %>');"></div>
+            <% else %>
+              <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;">
+              </div>
+            <% end %>
+            <div class="card-body" style="font-size: 30px; height:200px; width: 200px;">
+              <h2><%= event.name %></h2>
+              <p>Start: <%= event.from.to_s %></p>
+              <p>End: <%= event.to.to_s %></p>
+            </div>
+          </div>
+        <% end %>
+          <div class="event-description">
+
+              <h3> <strong> Location:</strong> <%= event.space.name %></h3>
+              <h3> <strong> Address:</strong> <%= event.space.address %></h3>
+              <h3> <strong> Description:</strong> <%= event.pitch %></h3>
+            <% if event.confirmation == true %>
+              <h3 class="status" id="status-<%= event.id %>"> <strong> Status:</strong> Approved</h3>
+              <%= link_to "Unconfirm", confirm_path(event: event), method: :patch, remote: true, class: "confirm", id: "#{event.id}" %>
+            <% else %>
+              <h3 class="status" id="status-<%= event.id %>"> <strong> Status:</strong> Must be approved</h3>
+              <%= link_to "Confirm", confirm_path(event: event), method: :patch, remote: true, class: "confirm", id: "#{event.id}" %>
+            <% end %>
+          </div>
+      </div>
+    <% elsif event.user == current_user %><%# for Space's user %>
+      <div class="event-container">
+        <%= link_to space_event_path(event.space, event) do %>
+          <div class="card event-image">
+            <% if event.images? %>
+              <div class="card-image" style="background-image: url(
+                '<%= cl_image_path(event.images.last.path) %>');"></div>
+            <% else %>
+              <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;">
+              </div>
+            <% end %>
+            <div class="card-body" style="font-size: 30px; height:200px; width: 200px;">
+              <h2><%= event.name %></h2>
+              <p>Start: <%= event.from.to_s %></p>
+              <p>End: <%= event.to.to_s %></p>
+            </div>
+          </div>
+        <% end %>
+          <div class="event-description">
+            <h3> <strong> Location:</strong> <%= event.space.name %></h3>
+            <h3> <strong> Address:</strong> <%= event.space.address %></h3>
+            <h3> <strong> Description:</strong> <%= event.pitch %></h3>
+            <% if event.confirmation == true %>
+              <h3> <strong> Status:</strong> Approved</h3>
+              <% if event.booking.state == "pending" %>
+                <div class="payer">
+                  <h1>Pay for your event</h1>
+                  <%= form_tag booking_payments_path(event.booking) do %>
+                    <article>
+                      <label class="amount">
+                      <span>Price based on your rental term: <%= humanized_money_with_symbol(event.booking.amount) %></span>
+                      </label>
+                      </article>
+                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-name="Pay for my event"
+                        data-email="<%= current_user.email %>"
+                        data-description="Booking for <%= event.booking.spaces_sku %>"
+                        data-amount="<%= event.booking.amount_cents %>"
+                        data-currency="<%= event.booking.amount.currency %>"></script>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <h3> <strong> Status:</strong> Must be approved by the owner</h3>
+            <% end %>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= content_for :after_js do %>
+  <script>
+    $(document).ready(function() {
+      $(".confirm").on("click", function() {
+        var confirmButtonId = $(this).attr("id");
+        var confirmButton = $("#" + confirmButtonId);
+        var status = $("#status-" + confirmButtonId);
+        if (confirmButton.text() == "Confirm") {
+          status.html("<strong> Status:</strong> Approved");
+          confirmButton.text("Unconfirm");
+        } else {
+          status.html("<strong> Status:</strong> Must be approved");
+          confirmButton.text("Confirm");
+        }
+      });
+    });
+  </script>
+<% end %>

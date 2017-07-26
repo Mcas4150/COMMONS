@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .slick-next{
-  right: 25px;
+  right: 50px;
   z-index: 100;
 }
 .slick-prev {
@@ -24,6 +24,11 @@
   justify-content: center;
 }
 
+.slick-prev:before, .slick-next:before {
+  opacity: 0.9;
+  font-size: 60px;
+}
+
 .left-pack{
   width:65%;
   float:left;
@@ -36,16 +41,23 @@
 }
 .icons-text{
   width:100%;
+  justify-content: space-around;
+  display:flex;
+  margin-bottom: 10px;
+
 }
 
 .icon{
-  float: left;
+
   width:200px;
-  color: $green;
+  color: $brand-color;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  height: 78px;
+  position: relative;
+  top: -65px;
 }
 
 *:before{
@@ -55,12 +67,16 @@
 
 .icon h3{
   text-align: center;
+  color: $black;
+  font-size: 23px;
+
 }
 
 
 .description{
   float:left;
   width:100%;
+  margin-bottom: 50px;
 }
 
 .function{
@@ -88,3 +104,12 @@
   height: 400px;
   margin:0 auto;
 }
+.auto-width {
+  width: auto;
+}
+
+.span.bold {
+  font-weight: 800;
+}
+
+

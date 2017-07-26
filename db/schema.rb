@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721142221) do
+ActiveRecord::Schema.define(version: 20170725180340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,20 +44,37 @@ ActiveRecord::Schema.define(version: 20170721142221) do
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.string   "state"
+    t.string   "spaces_sku"
+    t.integer  "amount_cents", default: 0, null: false
+    t.json     "payment"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.boolean  "confirmation"
+    t.index ["event_id"], name: "index_bookings_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
   create_table "events", force: :cascade do |t|
     t.datetime "datetime"
     t.string   "description"
     t.boolean  "public"
     t.integer  "admission"
     t.integer  "space_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.date     "from"
     t.date     "to"
     t.integer  "user_id"
     t.string   "pitch"
     t.string   "name"
     t.string   "images"
+    t.integer  "price_cents",  default: 0, null: false
+    t.boolean  "confirmation"
+    t.string   "publicity"
     t.index ["space_id"], name: "index_events_on_space_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
@@ -67,6 +84,16 @@ ActiveRecord::Schema.define(version: 20170721142221) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.index ["event_id"], name: "index_messages_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "reviewevents", force: :cascade do |t|
@@ -94,17 +121,18 @@ ActiveRecord::Schema.define(version: 20170721142221) do
   create_table "spaces", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "price"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "category"
     t.integer  "capacity"
     t.string   "images"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "address"
     t.string   "noise"
+    t.integer  "price_cents", default: 0, null: false
+    t.string   "sku"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 
@@ -121,7 +149,7 @@ ActiveRecord::Schema.define(version: 20170721142221) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false
+    t.boolean  "admin",                  default: false, null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"
@@ -129,12 +157,17 @@ ActiveRecord::Schema.define(version: 20170721142221) do
     t.string   "last_name"
     t.string   "token"
     t.datetime "token_expiry"
+    t.string   "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "events"
+  add_foreign_key "bookings", "users"
   add_foreign_key "events", "spaces"
   add_foreign_key "events", "users"
+  add_foreign_key "messages", "events"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviewevents", "events"
   add_foreign_key "reviewevents", "users"
   add_foreign_key "reviewspaces", "spaces"

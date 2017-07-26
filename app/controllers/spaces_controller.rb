@@ -4,7 +4,11 @@ class SpacesController < ApplicationController
 
 
   def index
-    @spaces = Space.all
+    if params[:category]
+      @spaces = Space.where(category: params[:category])
+    else
+      @spaces = Space.all
+    end
   end
 
   def show
@@ -23,6 +27,7 @@ class SpacesController < ApplicationController
   def create
     @space = Space.new(space_params)
     @space.user = current_user
+    @space.sku = params[:space][:name].downcase.gsub(' ', '-')
     if @space.save
       redirect_to space_path(@space)
     end

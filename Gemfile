@@ -38,11 +38,13 @@ end
 
 # new gems
 gem 'cloudinary', '1.1.7'
-gem 'attachinary', github: 'assembler/attachinary'
+gem 'attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem "geocoder"
 gem "gmaps4rails"
+gem 'money-rails'
+gem 'stripe'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

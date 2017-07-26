@@ -1,0 +1,157 @@
+.card {
+
+  background-size: cover !important;
+  color: black;
+  position: relative;
+  margin: 20px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-contents{
+  text-align: left;
+}
+.card-description p {
+  font-size: 13px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+  color: $black;
+}
+
+
+.card {
+  margin: 0px;
+  padding: 5px;
+  height: 385px;
+  width: 325px;
+  background-size: cover;
+  border: 3px solid $black;
+  border-bottom: 5px solid $black;
+  background-color:$white;
+  overflow: hidden;
+  .card-image {
+    width: 325px;
+    height:275px;
+    margin: -5px;
+    background-size: cover;
+  }
+  a {
+    color: $brand-color;
+    &:hover {
+      color: darken($brand-color, 10%);
+      text-decoration: none;
+    }
+  }
+  p {
+  font-family:$base-font;
+  font-weight: bold;
+  color: $black;
+  font-size: 20px;
+  margin-bottom: 0em;
+  position: relative;
+  top: -24px;
+  margin-left: -2px;
+  clear: both;
+}
+h2 {
+  font-family:$base-font;
+  color: $white;
+  background-color: $black;
+  font-size: 1em;
+  margin-left: -5px;
+  padding: 5px;
+  position: relative;
+  top: -50px;
+  float: left;
+  display: inline;
+}
+}
+
+
+.card-large {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: $white;
+  h2 {
+    width: 80%;
+    z-index: 10;
+    position: relative;
+    top: -65px;
+    font-size: 2em;
+    text-align: center;
+    margin: 35px auto;
+    display: block;
+  }
+}
+
+.event-card {
+  border: none;
+  border-bottom: 5px solid;
+  h3 {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4em;
+  }
+  .function {
+    padding: 5px;
+  }
+}
+
+.event-card-index {
+  height: 400px;
+  .card-body {
+    height: auto!important;
+    width: auto!important;
+    .date {
+      position: absolute;
+      top: 330px;
+      p {
+        padding-left: 1em;
+        text-align: left;
+      }
+    }
+  }
+}
+.event-description {
+  word-wrap: break-word;
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.4em;
+  }
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}

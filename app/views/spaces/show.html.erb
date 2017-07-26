@@ -6,53 +6,58 @@
   <% end %>
 </div>
 
-<div class="container">
-  <div class="left-pack">
-    <div class="title2"> <%= @space.name %></div>
-      <p><%= @space.address%></p>
-      <p>Category: <%= @space.category %></p>
-    <div class="icons-text">
+<div class="container flex-container">
+  <div class="card card-large">
+    <h2> <%= @space.name %></h2>
+      <div class="icons-text">
       <div class="icon">
-        <i class="fa fa-usd fa-3x center-block" aria-hidden="true"></i>
-        <h3><%= @space.price %></h3>
+        <p>Starting Price</p>
+        <div>
+          <i class="fa fa-usd fa-3x center-block" aria-hidden="true"></i>
+          <h3><%= @space.price %></h3>
+        </div>
       </div>
       <div class="icon">
+      <p>Max Capacity</p>
+      <div>
         <i class="fa fa-users fa-3x center-block" aria-hidden="true"></i>
-        <h3><%= @space.capacity %>people</h3>
+        <h3><%= @space.capacity %></h3>
+      </div>
+
       </div>
       <div class="icon">
+      <p>Noise Restrictions</p>
+      <div>
         <i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
         <h3><%= @space.noise %></h3>
       </div>
-    </div>
-    <div class="description">
-      <p><%= @space.description %></p>
-    </div>
-    <div class="function">
-      <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg" %>
-      <% if user_signed_in? && (current_user.id == @space.user_id) %>
-        <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg"%>
-      <% end %>
-      <%= link_to 'Back', spaces_path, class:"btn btn-primary btn-lg" %>
-    </div>
-  </div>
-  <div class="right-pack curvy">
-    <div class="title_window">Past events</div>
-    <div class="event">
-      <% @space.events.each do |event| %>
-      <div class="card">
-      <% unless event.images == [] %>
-        <div class="photo"> <%= cl_image_tag(event.images.first.path, {:width => 302, :height => 202, crop: :fill}) %></div>
-        <% end %>
-        <div class="description"><%= event.name %></div>
-      </div>
-      <% end %>
-    </div>
 
+      </div>
+    </div>
   </div>
 </div>
 
-<div id="map" class= "curvy">
+<div class="container">
+  <div class="row padded">
+    <div class="col-sm-6">
+      <div class="card auto-width auto-height event-card" >
+        <h3> <strong>Address:</strong> <%=@space.address %></h3>
+        <h3> <strong> Description:</strong> <%= @space.description %></h3>
+        <div class="function">
+          <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+          <% if @space.user == current_user %>
+            <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div id="map" class= "curvy"></div>
+    </div>
+  </div>
+</div>
+
+
 
 
 <% content_for(:after_js) do %>
