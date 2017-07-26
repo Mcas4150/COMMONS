@@ -116,3 +116,14 @@ h1 {
 .main-wrapper {
   min-height: 100vh;
 }
+
+.datepicker {
+  border: none;
+  border-radius: 0;
+  margin: 1rem 0;
+  padding: .5em;
+}
+
+#event_publicity {
+  border: 1px solid lighten($brand-color, 15%);
+}
