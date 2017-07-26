@@ -30,7 +30,7 @@ end
 photo_urls = %w(http://i.imgur.com/P7tJTsD.jpg, http://i.imgur.com/T6xjwIB.png)
 
 spaces_creation("The Mothership", "Wide-open loft, full of sun and stories", 50,
- '10 des pins, Montreal, QC', "venue", "yes", 75, photo_urls)
+ '10 des pins, Montreal, QC', "Venue", "yes", 75, photo_urls)
 
 
 
@@ -42,9 +42,38 @@ spaces_creation("Textile Park", "Massive Picnic Table, completely open for publi
 
 
 
-
 photo_urls = %w(http://i.imgur.com/chRS4uD.png, http://i.imgur.com/r1rcnd3.jpg)
 
 spaces_creation("Birdbrain Barn", "Come sit and ponder how it will all end for you", 80,
- '6597 St Laurent Blvd, Montreal, QC', "Workspace", "no", 1, photo_urls)
+ '6597 St Laurent Blvd, Montreal, QC', "Working Space", "no", 1, photo_urls)
 
+
+photo_urls = %w(http://i.imgur.com/hKbt2IN.jpg, http://i.imgur.com/r1rcnd3.jpg)
+
+spaces_creation("Painters Place", "Come paint and you'll feel better", 40,
+ '6537 St Laurent Blvd, Montreal, QC', "Working Space", "yes", 10, photo_urls)
+
+
+photo_urls = %w(http://i.imgur.com/WcZAG9m.jpg, http://i.imgur.com/WcZAG9m.jpg)
+
+spaces_creation("Splash Laundromat", "Come dance ur sins clean", 200,
+ '6499 St Laurent Blvd, Montreal, QC', "Venue", "no", 150, photo_urls)
+
+
+photo_urls = %w(http://i.imgur.com/ZXNrgWf.jpg, http://i.imgur.com/ZXNrgWf.jpg)
+
+spaces_creation("Photo Factory", "Come take ur best shot...", 100,
+ '4499 St Laurent Blvd, Montreal, QC', "Working Space", "yes", 15, photo_urls)
+
+photo_urls = %w(http://i.imgur.com/w9cD2S8.jpg, http://i.imgur.com/w9cD2S8.jpg)
+spaces_creation("Pillar House", "This is a real place", 80,
+ '4000 St Laurent Blvd, Montreal, QC', "Others", "no", 80, photo_urls)
+
+
+photo_urls = %w(http://i.imgur.com/5RoN1E5.jpg, https://c1.staticflickr.com/5/4091/5204926883_7f5aa134f7_b.jpg)
+spaces_creation("350 Cool Roof", "Party Low, Party High on the Flattop", 200,
+ '3000 St Laurent Blvd, Montreal, QC', "Others", "no", 100, photo_urls)
+
+photo_urls = %w(http://i.imgur.com/qEMYDOe.jpg, http://i.imgur.com/qEMYDOe.jpg)
+spaces_creation("Vault", "Get away with murder without breaking the bank..", 3000,
+ '2000 St Laurent Blvd, Montreal, QC', "Venue", "no", 200, photo_urls)
