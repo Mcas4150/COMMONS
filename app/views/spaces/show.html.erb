@@ -46,7 +46,7 @@
         <div class="function">
           <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
           <% if @space.user == current_user %>
-            <%= link_to 'Edit', edit_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
+            <%= link_to 'Edit', edit_space_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
           <% end %>
         </div>
       </div>
