@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 20170725180340) do
     t.string   "pitch"
     t.string   "name"
     t.string   "images"
+    t.string   "publicity"
     t.integer  "price_cents",  default: 0, null: false
     t.boolean  "confirmation"
-    t.string   "publicity"
     t.index ["space_id"], name: "index_events_on_space_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
@@ -149,7 +149,7 @@ ActiveRecord::Schema.define(version: 20170725180340) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false, null: false
+    t.boolean  "admin",                  default: false
     t.string   "provider"
     t.string   "uid"
     t.string   "facebook_picture_url"

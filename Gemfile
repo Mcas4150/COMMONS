@@ -38,7 +38,7 @@ end
 
 # new gems
 gem 'cloudinary', '1.1.7'
-gem 'attachinary', github: 'assembler/attachinary'
+gem 'attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem "geocoder"
