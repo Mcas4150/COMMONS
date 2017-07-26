@@ -45,7 +45,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to event_path(@event)
+      redirect_to space_event_path(@event)
     else
       render :edit
     end
