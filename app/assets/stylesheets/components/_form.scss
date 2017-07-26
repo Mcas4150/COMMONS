@@ -432,4 +432,11 @@ fieldset {
 form {
   margin: 20px 0;
 }
+a {
+  color: $brand-color;
+}
+
+a:hover {
+  color:$white;
+}
 
