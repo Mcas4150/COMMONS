@@ -1,39 +1,43 @@
 <h2 style="color: black">Events</h2>
 
-
 <div class="events-display">
   <% @events.each do |event| %>
+
     <% if event.publicity == 'Public' && event.confirmation == true %>
-      <div class="event-container">
-        <%= link_to space_event_path(event.space, event) do %>
-          <div class="card event-image">
-            <% if event.images? %>
-              <div class="card-image" style="background-image: url(
-                '<%= cl_image_path(event.images.last.path) %>');">
-              </div>
-            <% else %>
-              <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;"></div>
-            <% end %>
-            <div class="card-body" style="font-size: 30px; height:200px; width: 200px;">
-              <h2><%= event.name %></h2>
-              <p>Start: <%= event.from.to_s %></p>
-              <p>End: <%= event.to.to_s %></p>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <%= link_to space_event_path(event.space, event) do %>
+              <div class="card event-image event-card-index">
+                <% if event.images? %>
+                  <div class="card-image" style="background-image: url(
+                    '<%= cl_image_path(event.images.last.path) %>');">
+                  </div>
+                <% else %>
+                  <div class="card-header" style="background-image: url(); height: 300px; width : 300px; padding: 10px;"></div>
+                <% end %>
+                <div class="card-body" style="font-size: 30px;">
+                  <h2><%= event.name %></h2>
+                  <div class="date">
+                    <p>Start: <%= event.from.to_s %></p>
+                    <p>End: <%= event.to.to_s %></p>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
-        <% end %>
-        <div class="event-description">
-          <h3> <strong> Location:</strong> <%= event.space.name %>
-          <br>
-          <strong> Address:</strong> <%= event.space.address %>
-          <br>
-          <br>
-          <strong> Description:</strong> <%= event.pitch %></h3>
+          <div class="col-md-6">
+            <div class="event-description">
+              <h3> <strong> Location:</strong> <%= event.space.name %>
+              <br>
+              <strong> Address:</strong> <%= event.space.address %>
+              <br>
+              <br>
+              <strong> Description:</strong> <%= event.pitch %></h3>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
   <% end %>
 </div>
-
-
-
-
