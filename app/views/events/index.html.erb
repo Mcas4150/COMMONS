@@ -3,7 +3,7 @@
 
 <div class="events-display">
   <% @events.each do |event| %>
-    <% if event.publicity = 'Public' %>
+    <% if event.publicity == 'Public' && event.confirmation == true %>
       <div class="event-container">
         <%= link_to space_event_path(event.space, event) do %>
           <div class="card event-image">
