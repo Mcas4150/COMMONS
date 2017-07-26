@@ -51,6 +51,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def confirm
+    @event = Event.find(params[:event])
+    @event.update(confirmation: !@event.confirmation)
+    @event.save
+  end
+
   def destroy
     @event = Event.find(params[:id])
     @event.destroy

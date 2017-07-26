@@ -22,6 +22,7 @@ resources :events, only: [:index, :edit, :update] do
   resources :messages, only: [:index, :create, :show]
 end
 
+  patch "/confirm", to: "events#confirm", as: "confirm"
 
 
 
