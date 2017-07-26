@@ -30,11 +30,11 @@
               <h3> <strong> Address:</strong> <%= event.space.address %></h3>
               <h3> <strong> Description:</strong> <%= event.pitch %></h3>
             <% if event.confirmation == true %>
-              <h3 id="status"> <strong> Status:</strong> Approved</h3>
-              <%= link_to "Unconfirm", confirm_path(event: event), method: :patch, remote: true, id: "confirm" %>
+              <h3 class="status" id="status-<%= event.id %>"> <strong> Status:</strong> Approved</h3>
+              <%= link_to "Unconfirm", confirm_path(event: event), method: :patch, remote: true, class: "confirm", id: "#{event.id}" %>
             <% else %>
-              <h3 id="status"> <strong> Status:</strong> Must be approved</h3>
-              <%= link_to "Confirm", confirm_path(event: event), method: :patch, remote: true, id: "confirm" %>
+              <h3 class="status" id="status-<%= event.id %>"> <strong> Status:</strong> Must be approved</h3>
+              <%= link_to "Confirm", confirm_path(event: event), method: :patch, remote: true, class: "confirm", id: "#{event.id}" %>
             <% end %>
           </div>
       </div>
@@ -93,13 +93,16 @@
 <%= content_for :after_js do %>
   <script>
     $(document).ready(function() {
-      $("#confirm").on("click", function() {
-        if ($("#confirm").text() == "Confirm") {
-          $("#status").html("<strong> Status:</strong> Approved");
-          $("#confirm").text("Unconfirm");
+      $(".confirm").on("click", function() {
+        var confirmButtonId = $(this).attr("id");
+        var confirmButton = $("#" + confirmButtonId);
+        var status = $("#status-" + confirmButtonId);
+        if (confirmButton.text() == "Confirm") {
+          status.html("<strong> Status:</strong> Approved");
+          confirmButton.text("Unconfirm");
         } else {
-          $("#status").html("<strong> Status:</strong> Must be approved");
-          $("#confirm").text("Confirm");
+          status.html("<strong> Status:</strong> Must be approved");
+          confirmButton.text("Confirm");
         }
       });
     });
