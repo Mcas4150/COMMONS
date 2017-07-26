@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
+
   def show
     @user = User.find(params[:id])
     @events = Event.all
@@ -7,7 +12,5 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    @users = User.all
-  end
+
 end

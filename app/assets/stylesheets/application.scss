@@ -45,9 +45,6 @@
 
 }
 
-
-
-
 .curvy {
   border-radius: 5px;
 
@@ -85,6 +82,8 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-size: cover !important;
+  background-image: image-url("chain.JPG");
 }
 
 
