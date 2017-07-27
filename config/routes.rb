@@ -9,17 +9,19 @@ Rails.application.routes.draw do
 
 
   resources :spaces do
-    resources :events, only: [:new, :create, :show, :destroy, :edit, :update]
+    resources :events, only: [:new, :create, :show, :delete, :edit, :update]
   end
 
   resources :bookings, only: [] do
     resources :payments, only: [:create]
   end
 
+
   resources :events, only: [:index, :edit, :update] do
     resources :reviewevents, only: :create
     resources :messages, only: [:index, :create, :show]
   end
+
 
   patch "/confirm", to: "events#confirm", as: "confirm"
 
