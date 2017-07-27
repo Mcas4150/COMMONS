@@ -24,23 +24,6 @@
 
 
 
-<div class="reviewer">
- <h2>
- <%= pluralize @event.reviewevents.size, "review" %>
- </h2>
-
-  <div id="reviews">
-    <% if @event.reviewevents.blank? %>
-      Be the first to leave a review for <%= @event.name %>
-    <% else %>
-      <% @event.reviewevents.each do |review| %>
-        <%= render 'reviewevents/show', reviewevent: review %>
-      <% end %>
-    <% end %>
-  </div>
-  <%= render 'reviewevents/form', event: @event, reviewevent: Reviewevent.new%>
-</div>
-
 
 
         <%= link_to 'Edit', edit_event_path(@event), class:"btn btn-primary btn-lg"%>
