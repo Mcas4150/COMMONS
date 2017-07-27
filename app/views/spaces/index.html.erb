@@ -8,12 +8,15 @@
 </div>
 
 <div class="tabs">
+
   <%= render "tabs", active: params[:category].nil? ? "All" : params[:category] %>
 </div>
 
 <div class="spaces-display">
   <%= render "spaces_list", spaces: @spaces %>
 </div>
+
+
 
 
 
