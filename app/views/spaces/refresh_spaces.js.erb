@@ -1,0 +1,12 @@
+<% active = params[:category] %>
+
+$(".spaces-display").html("<%= j render 'spaces_list', spaces: @spaces %>");
+
+var active = "<%= active %>";
+$( ".tab" ).each(function() {
+  $(this).removeClass("active");
+  if ($(this).text() == active) {
+    $(this).addClass("active");
+    break;
+  };
+});

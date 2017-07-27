@@ -1,10 +1,14 @@
-<h2 style="color: black">Events</h2>
+
+
+
 
 <div class="events-display">
+
   <% @events.each do |event| %>
 
     <% if event.publicity == 'Public' && event.confirmation == true %>
       <div class="container">
+      <h2 style="color: black; margin-right:1045px; font-size: 50px; ">Events</h2>
         <div class="row align-items-center">
           <div class="col-md-6">
             <%= link_to space_event_path(event.space, event) do %>

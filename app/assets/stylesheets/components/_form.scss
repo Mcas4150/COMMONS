@@ -62,6 +62,8 @@ h1 {
 
 h2 {
   color: $brand-color;
+  text-align: center;
+  margin-right: 34px;
 }
 
 .form-container {
@@ -147,6 +149,7 @@ fieldset {
   input {
     height: ($mf-font-size * 1.9);
     border-bottom: 3px solid $brand-color !important;
+
     &:focus {
       border-bottom: 3px solid $black;
       box-shadow: none;
@@ -172,7 +175,7 @@ fieldset {
     pointer-events: none;
     padding-left: $mf-spacer;
     z-index: 1;
-    color: $mf-label-color;
+    color: $white;
     font-size: $mf-font-size;
     font-weight: normal;
     transition: all $mf-transition-speed ease;
@@ -208,6 +211,9 @@ fieldset {
     color: transparent;
     transition: all $mf-transition-speed ease;
     box-shadow: none;
+    &::placeholder {
+      color: $brand-color;
+    }
   }
 
   input[type="file"] {
@@ -218,6 +224,10 @@ fieldset {
     }
   }
 
+  abbr {
+    display: none;
+  }
+
   select,
   input:focus,
   input:valid,
@@ -226,7 +236,7 @@ fieldset {
   textarea:focus,
   textarea.form-file,
   textarea.has-value {
-    color: $mf-input-color;
+    color: $white;
 
     ~ .control-label {
       font-size: $mf-active-font-size;
@@ -440,3 +450,6 @@ a:hover {
   color:$white;
 }
 
+.form-group select {
+  border: 1px solid $brand-color;
+}

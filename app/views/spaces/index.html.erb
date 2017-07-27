@@ -8,52 +8,12 @@
 </div>
 
 <div class="tabs">
-  <% if params[:category] == "Venue" %>
-    <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
-    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab active", datatab: "tab-2"} %>
-    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
-    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab", datatab: "tab-4"} %>
-  <% elsif params[:category] == "Working-Space" %>
-    <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
-    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
-    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab active", datatab: "tab-3"} %>
-    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab", datatab: "tab-4"} %>
-  <% elsif params[:category] == "Other" %>
-    <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
-    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
-    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
-    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab active", datatab: "tab-4"} %>
-    <% else %>
-    <%= link_to "All", spaces_path, {class: "tab active", datatab: "tab-1"} %>
-    <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
-    <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
-    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab", datatab: "tab-4"} %>
-    <% end %>
+  <%= render "tabs", active: params[:category].nil? ? "All" : params[:category] %>
 </div>
 
-
-  <div class="spaces-display">
-    <% @spaces.each do |space| %>
-      <div>
-         <%= link_to space_path(space) do %>
-          <div class="card">
-            <% if space.images? %>
-              <div class="card-image" style="background-image: url('<%= cl_image_path(space.images.last.path) %>');" ></div>
-            <% else %>
-              <div class="card-image" style="background-image: url('<%= image_path('montreal.JPG') %>');" ></div>
-              <% end %>
-            <div class="card-body" style="font-size:30px; height:200px;">
-              <h2><%= space.name %></h2>
-              <p style="float: left"><%= space.category %></p>
-
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <% end %>
-  </div>
-
-
+<div class="spaces-display">
+  <%= render "spaces_list", spaces: @spaces %>
+</div>
 
 <div class="text-center padded">
   <%= link_to "Add a Space", new_space_path, class: "btn btn main-btn" %>
@@ -66,11 +26,11 @@
     $('.tabs a').click(function(){
         var tab_id = $(this).attr('datatab');
 
-        $('.tabs a').removeClass('current');
+        $('.tabs a').removeClass('active');
 
-        $(this).addClass('current');
-    })
-})
+        $(this).addClass('active');
+    });
+});
   </script>
 <% end %>
 
