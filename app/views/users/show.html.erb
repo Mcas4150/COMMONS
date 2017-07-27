@@ -1,7 +1,8 @@
-<img src="<%= @user.facebook_picture_url %>">
-<%= @user.email %>
-<%= @user.first_name %>
-<%= @user.last_name %>
+<div class="user-info">
+  <img src="<%= @user.facebook_picture_url %> " style="border-radius: 50%; border: 2px solid black; ">
+  <p style="color:black"><%= @user.first_name %> <%= @user.last_name %></p>
+  <p style="color:black"><%= @user.email %></p>
+</div>
 
 
 <div class="events-display">
@@ -31,10 +32,10 @@
               <h3> <strong> Description:</strong> <%= event.pitch %></h3>
             <% if event.confirmation == true %>
               <h3 class="status" id="status-<%= event.id %>"> <strong> Status:</strong> Approved</h3>
-              <%= link_to "Unconfirm", confirm_path(event: event), method: :patch, remote: true, class: "confirm", id: "#{event.id}" %>
+              <%= link_to "Unconfirm", confirm_path(event: event), method: :patch, remote: true, class: "btn btn-primary btn-lg main-btn main-btn-small confirm", id: "#{event.id}" %>
             <% else %>
               <h3 class="status" id="status-<%= event.id %>"> <strong> Status:</strong> Must be approved</h3>
-              <%= link_to "Confirm", confirm_path(event: event), method: :patch, remote: true, class: "confirm", id: "#{event.id}" %>
+              <%= link_to "Confirm", confirm_path(event: event), method: :patch, remote: true, class: "btn btn-primary btn-lg main-btn main-btn-small confirm", id: "#{event.id}" %>
             <% end %>
           </div>
       </div>
