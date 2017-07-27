@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     if @event.save && booking.save
      EventMailer.confirmation(@event).deliver_now
-      redirect_to events_path
+      redirect_to user_path(current_user)
     else
       render "spaces/show"
     end
@@ -60,7 +60,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_path
+    redirect_to user_path(current_user)
   end
 
 private

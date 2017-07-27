@@ -1,8 +1,6 @@
 class Space < ApplicationRecord
   belongs_to :user
-  has_many :events
-  has_many :reviewspaces
-  has_many :reviewevents
+  has_many :events, dependent: :destroy
   has_attachments :images, maximum: 4
   validates :name, presence: true
   validates :name, uniqueness: true
