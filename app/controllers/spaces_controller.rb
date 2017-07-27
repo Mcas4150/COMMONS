@@ -52,7 +52,7 @@ class SpacesController < ApplicationController
   end
 
   def refresh_spaces
-    if params[:category]
+    if params[:category] && params[:category] != "All"
       @spaces = Space.where(category: params[:category])
     else
       @spaces = Space.all
