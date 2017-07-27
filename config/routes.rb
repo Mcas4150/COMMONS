@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-
+  get "/spaces/refresh_spaces/", to: "spaces#refresh_spaces", as: "refresh_spaces"
   resources :spaces do
     resources :events, only: [:new, :create, :show, :destroy, :edit, :update]
   end

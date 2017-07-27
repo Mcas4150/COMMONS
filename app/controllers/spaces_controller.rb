@@ -51,6 +51,17 @@ class SpacesController < ApplicationController
     redirect_to spaces_path
   end
 
+  def refresh_spaces
+    if params[:category]
+      @spaces = Space.where(category: params[:category])
+    else
+      @spaces = Space.all
+    end
+    respond_to do |format|
+      format.js # actually means: if the client ask for js -> return file.js
+    end
+  end
+
   private
 
   def space_params

@@ -1,0 +1,20 @@
+<%= link_to "All", refresh_spaces_path(:category => "All"), {class: "tab", datatab: "tab-1", remote: true} %>
+<%= link_to "Venue", refresh_spaces_path(:category => "Venue"), {class: "tab", datatab: "tab-2", remote: true} %>
+<%= link_to "Working Space", refresh_spaces_path(:category => "Working-Space"), {class: "tab", datatab: "tab-3", remote: true} %>
+<%= link_to "Other", refresh_spaces_path(:category => "Others"), {class: "tab", datatab: "tab-4", remote: true} %>
+
+<% content_for(:after_js) do %>
+  <script>
+  $(document).ready(function() {
+    var active = "<%= j active %>";
+    $( ".tab" ).each(function() {
+      if ($(this).text() == active) {
+        $(this).addClass("active");
+      };
+    });
+  });
+  $(".tab").click(function(e) {
+    e.preventDefault;
+  });
+  </script>
+<% end %>
