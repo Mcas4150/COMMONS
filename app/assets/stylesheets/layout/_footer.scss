@@ -44,13 +44,13 @@
 
 .btn-info {
   margin-left: 881px;
-  color: $brand-color;
+  color: $white;
   background-color: $black;
   border-color: $black;
 }
 
 .btn-info:hover {
-  color: $white;
+  color: $brand-color;
   background-color: $black;
 
   .btn-info:focus {
@@ -59,7 +59,10 @@
   }
 }
 .navbar-wagon-brand {
-  color: $brand-color;
+  color: $white;
+}
+.navbar-wagon-brand:hover{
+  color: $brand-color
 }
 
 footer {
