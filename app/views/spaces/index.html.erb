@@ -12,22 +12,22 @@
     <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
     <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab active", datatab: "tab-2"} %>
     <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
-    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab", datatab: "tab-4"} %>
+    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab", datatab: "tab-4"} %>
   <% elsif params[:category] == "Working-Space" %>
     <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
     <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
     <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab active", datatab: "tab-3"} %>
-    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab", datatab: "tab-4"} %>
-  <% elsif params[:category] == "Others" %>
+    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab", datatab: "tab-4"} %>
+  <% elsif params[:category] == "Other" %>
     <%= link_to "All", spaces_path, {class: "tab", datatab: "tab-1"} %>
     <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
     <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
-    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab active", datatab: "tab-4"} %>
+    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab active", datatab: "tab-4"} %>
     <% else %>
     <%= link_to "All", spaces_path, {class: "tab active", datatab: "tab-1"} %>
     <%= link_to "Venue", spaces_path(category:"Venue"), {class: "tab", datatab: "tab-2"} %>
     <%= link_to "Working Space", spaces_path(category:"Working-Space"), {class: "tab", datatab: "tab-3"} %>
-    <%= link_to "Others", spaces_path(category:"Others"), {class: "tab", datatab: "tab-4"} %>
+    <%= link_to "Other", spaces_path(category:"Other"), {class: "tab", datatab: "tab-4"} %>
     <% end %>
 </div>
 
