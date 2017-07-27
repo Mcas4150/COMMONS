@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725180340) do
+ActiveRecord::Schema.define(version: 20170727133836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,28 +96,6 @@ ActiveRecord::Schema.define(version: 20170725180340) do
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
-  create_table "reviewevents", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "rating"
-    t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_reviewevents_on_event_id", using: :btree
-    t.index ["user_id"], name: "index_reviewevents_on_user_id", using: :btree
-  end
-
-  create_table "reviewspaces", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "rating"
-    t.integer  "space_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["space_id"], name: "index_reviewspaces_on_space_id", using: :btree
-    t.index ["user_id"], name: "index_reviewspaces_on_user_id", using: :btree
-  end
-
   create_table "spaces", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -168,9 +146,5 @@ ActiveRecord::Schema.define(version: 20170725180340) do
   add_foreign_key "events", "users"
   add_foreign_key "messages", "events"
   add_foreign_key "messages", "users"
-  add_foreign_key "reviewevents", "events"
-  add_foreign_key "reviewevents", "users"
-  add_foreign_key "reviewspaces", "spaces"
-  add_foreign_key "reviewspaces", "users"
   add_foreign_key "spaces", "users"
 end
