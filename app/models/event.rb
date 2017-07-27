@@ -2,8 +2,7 @@ class Event < ApplicationRecord
   belongs_to :space
   belongs_to :user
   has_one :booking, dependent: :destroy
-  has_many :reviewevents
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_attachments :images, maximum: 4
 
 
