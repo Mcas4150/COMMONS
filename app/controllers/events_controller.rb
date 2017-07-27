@@ -32,7 +32,9 @@ class EventsController < ApplicationController
 
     @event.user = current_user
     if @event.save && booking.save
-     EventMailer.confirmation(@event).deliver_now
+      begin rescue => e
+        EventMailer.confirmation(@event).deliver_now
+      end
       redirect_to user_path(current_user)
     else
       render "spaces/show"
