@@ -61,7 +61,7 @@
             <h3> <strong> Location:</strong> <%= event.space.name %></h3>
             <h3> <strong> Address:</strong> <%= event.space.address %></h3>
             <h3> <strong> Description:</strong> <%= event.pitch %></h3>
-            <%# if event.confirmation == true %>
+            <% if event.confirmation == true %>
               <h3> <strong> Status:</strong> Approved</h3>
               <% if event.booking.state == "pending" %>
 
@@ -83,7 +83,7 @@
                         data-description="Booking for <%= event.booking.spaces_sku %>"
                         data-amount="<%= event.booking.amount_cents %>"
                         data-currency="<%= event.booking.amount.currency %>"></script>
-                  <%# end %>
+                  <% end %>
                   </div>
                 </div>
                 </div>
