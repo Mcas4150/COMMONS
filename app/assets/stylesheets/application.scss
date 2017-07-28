@@ -87,21 +87,27 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  .card-body {
+    width: none;
+    p, h2 {
+      float: left;
+    }
+    p {
+      top: -50px;
+    }
+  }
 }
 
 .events-display {
   .card-body {
-    width: none;
+    max-width: 275px;
      p, h2 {
       float: left;
      }
     p {
-      top: -41px;
+      top: -55px;
     }
   }
-
-
 }
 
 .dropdown li > a {
