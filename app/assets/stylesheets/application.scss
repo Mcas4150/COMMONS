@@ -28,7 +28,14 @@ body {
 
 }
 
+.card {
+  .icons-text {
+    p {
+      top: -25px;
+    }
 
+  }
+}
 
 .title2 {
   font-size: 36px;
@@ -87,9 +94,28 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  .card-body {
+    width: none;
+    p, h2 {
+      float: left;
+    }
+    p {
+      top: -50px;
+    }
+  }
 }
 
+.events-display {
+  .card-body {
+    max-width: 275px;
+     p, h2 {
+      float: left;
+     }
+    p {
+      top: -55px;
+    }
+  }
+}
 
 .dropdown li > a {
   transition: color 0.3s ease;
