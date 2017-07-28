@@ -4,13 +4,13 @@
     <% spaces.each do |space| %>
       <div>
          <%= link_to space_path(space) do %>
-          <div class="card">
+          <div class="card" style="height: 350px;">
             <% if space.images? %>
               <div class="card-image" style="background-image: url('<%= cl_image_path(space.images.last.path) %>');" ></div>
             <% else %>
               <div class="card-image" style="background-image: url('<%= image_path('montreal.JPG') %>');" ></div>
               <% end %>
-            <div class="card-body" style="font-size:30px; height:200px; width:200px">
+            <div class="card-body" style="font-size:30px; height:200px;">
               <h2><%= space.name %></h2>
               <p><%= space.category %></p>
 
