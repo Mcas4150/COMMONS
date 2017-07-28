@@ -443,11 +443,11 @@ form {
   margin: 20px 0;
 }
 a {
-  color: $brand-color;
+  color: $white;
 }
 
 a:hover {
-  color:$white;
+  color:$brand-color;
 }
 
 .form-group select {

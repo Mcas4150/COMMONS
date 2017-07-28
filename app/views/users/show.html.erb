@@ -61,17 +61,21 @@
             <h3> <strong> Location:</strong> <%= event.space.name %></h3>
             <h3> <strong> Address:</strong> <%= event.space.address %></h3>
             <h3> <strong> Description:</strong> <%= event.pitch %></h3>
-            <% if event.confirmation == true %>
+            <%# if event.confirmation == true %>
               <h3> <strong> Status:</strong> Approved</h3>
               <% if event.booking.state == "pending" %>
+
+                <div class="container flex-container">
+                <div class="card payment-card">
                 <div class="payer">
-                  <h1>Pay for your event</h1>
+                  <h1 style="color: black; font-size: 20px; font-weight: bolder; margin-top: 8px">Pay for your event</h1>
                   <%= form_tag booking_payments_path(event.booking) do %>
                     <article>
                       <label class="amount">
-                      <span>Price based on your rental term: <%= humanized_money_with_symbol(event.booking.amount) %></span>
+                      <span style="margin-bottom: 17px">Price based on your rental term: <%= humanized_money_with_symbol(event.booking.amount) %></span>
                       </label>
-                      </article>
+                    </article>
+
                       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                         data-name="Pay for my event"
@@ -79,7 +83,9 @@
                         data-description="Booking for <%= event.booking.spaces_sku %>"
                         data-amount="<%= event.booking.amount_cents %>"
                         data-currency="<%= event.booking.amount.currency %>"></script>
-                  <% end %>
+                  <%# end %>
+                  </div>
+                </div>
                 </div>
               <% end %>
             <% else %>
