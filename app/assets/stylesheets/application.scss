@@ -90,6 +90,19 @@ h1 {
 
 }
 
+.events-display {
+  .card-body {
+    width: none;
+     p, h2 {
+      float: left;
+     }
+    p {
+      top: -41px;
+    }
+  }
+
+
+}
 
 .dropdown li > a {
   transition: color 0.3s ease;
