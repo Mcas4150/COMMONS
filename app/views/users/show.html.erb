@@ -5,7 +5,7 @@
 </div>
 
 
-<div class="events-display">
+<div class="events-display" style="min-height: 660px;">
   <% @events.each do |event| %>
     <% if event.space.user == current_user %> <%# for　Space's Owner %>
       <div class="event-container">
