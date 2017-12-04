@@ -1,9 +1,5 @@
-<div class="slider">
-  <% @space.images.each do |image| %>
-     <div>
-      <%= cl_image_tag(image.path, {:width => 1500, :height => 550, crop: :fill}) %>
-     </div>
-  <% end %>
+<div class="flex-center">
+  <img src=<%= @space.image %>/>
 </div>
 
 <div class="container flex-container">
@@ -41,8 +37,9 @@
   <div class="row padded">
     <div class="col-sm-6">
       <div class="card auto-width auto-height event-card" >
-        <h3> <strong>Address:</strong> <%=@space.address %></h3>
-        <h3> <strong> Description:</strong> <%= @space.description %></h3>
+        <h3> <strong>Address</strong> <%=@space.address %></h3>
+        <h3> <strong> Description</strong> <%= @space.description %></h3>
+        <h3> <strong> Website</strong> <%= @space.website %></h3>
         <div class="function">
           <%= link_to 'Inquire', new_space_event_path(@space), class:"btn btn-primary btn-lg main-btn main-btn-small" %>
           <% if @space.user == current_user %>
@@ -53,6 +50,59 @@
     </div>
     <div class="col-sm-6">
       <div id="map" class= "curvy"></div>
+    </div>
+  </div>
+  <div class="row padded">
+    <div class="col-sm-12 details">
+      <h2>Booking</h2>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">Rental Policy
+          </div>
+          <div class="col-xs-12 col-sm-6"><%= @space.rentalpolicy %>
+          </div>
+          <div class="col-xs-12 col-sm-6">Cancellation Policy</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.cancellation %></div>
+          <div class="col-xs-12 col-sm-6">Personnel Available</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.personnel %></div>
+          <div class="col-xs-12 col-sm-6">Payment Types</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.payment %></div>
+        </div>
+    </div>
+  </div>
+  <div class="row padded">
+    <div class="col-sm-12 details">
+      <h2>Features</h2>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">Space Dimensions</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.dimensions%></div>
+          <div class="col-xs-12 col-sm-6">Space Features</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.features %></div>
+          <div class="col-xs-12 col-sm-6">Personnel Available</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.personnel %></div>
+          <div class="col-xs-12 col-sm-6">Capacity</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.capacity %></div>
+           <div class="col-xs-12 col-sm-6">Restrooms</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.restrooms %></div>
+        </div>
+    </div>
+  </div>
+  <div class="row padded">
+    <div class="col-sm-12 details">
+      <h2>Equipment</h2>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">Lighting</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.lighting%></div>
+          <div class="col-xs-12 col-sm-6">Furniture</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.furniture %></div>
+          <div class="col-xs-12 col-sm-6">Artist Amenities</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.amenities %></div>
+          <div class="col-xs-12 col-sm-6">Audio</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.audio%></div>
+          <div class="col-xs-12 col-sm-6">Video</div>
+          <div class="col-xs-12 col-sm-6"><%= @space.video%></div>
+
+
+        </div>
     </div>
   </div>
 </div>

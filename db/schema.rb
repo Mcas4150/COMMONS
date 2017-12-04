@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727133836) do
+ActiveRecord::Schema.define(version: 20171204010411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,12 +105,30 @@ ActiveRecord::Schema.define(version: 20170727133836) do
     t.integer  "capacity"
     t.string   "images"
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "address"
     t.string   "noise"
-    t.integer  "price_cents", default: 0, null: false
+    t.integer  "price_cents",  default: 0, null: false
     t.string   "sku"
+    t.integer  "dimensions"
+    t.string   "payment"
+    t.string   "lighting"
+    t.string   "audio"
+    t.string   "video"
+    t.string   "amenities"
+    t.boolean  "restrooms"
+    t.string   "cancellation"
+    t.string   "features"
+    t.string   "rentalpolicy"
+    t.boolean  "smoking"
+    t.string   "uses"
+    t.string   "disciplines"
+    t.string   "furniture"
+    t.string   "personnel"
+    t.string   "restrictions"
+    t.string   "website"
+    t.string   "image"
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 

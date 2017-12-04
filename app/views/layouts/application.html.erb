@@ -24,6 +24,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
@@ -31,6 +32,7 @@
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
     <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
     <%= yield(:after_js) %>
+      <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %> <!-- Append this after the main `javascript_include_tag`. -->
   </body>
 </html>

@@ -113,4 +113,14 @@
   font-weight: 800;
 }
 
+.flex-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
 
+.details{
+  background-color: white;
+  border-bottom: 5px solid black;
+}
